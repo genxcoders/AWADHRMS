@@ -1,0 +1,199 @@
+<!-- 
+	Company Name:	GenXCoders Pvt. Ltd.
+	Author Name:	Er Aashish Handa
+	Date:			Oct 01, 2019
+	Client:			Gaurav Sharma
+	Project Name:	AWADH
+	Project Type:	Restaurant Management System
+ -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="GXCPL - Restaurant Management System">
+		<meta name="keywords" content="GenXCoders, Restaurant Management System, RMS, GXCPL, Nagpur, Best Restaurant Management System">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<title>Settings: Restaurant</title>
+		<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="../assets/css/lv-ripple.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/css/gxcpl.css" />
+	</head>
+	<body>
+
+		<!-- Site Content -->
+		<!-- Navbar -->
+		<div id="gxcpl" class="navbar navbar-default navbar-fixed-top gxcpl-navbar-shadow" role="navigation">
+		    <div class="container-fluid">
+		        <div class="navbar-header"><a class="navbar-brand" href="https://www.gxcpl.com/RMS">RMS</a>
+		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+		            </button>
+		        </div>
+		        <div class="collapse navbar-collapse navbar-menubuilder">
+		            <ul class="nav navbar-nav navbar-right">
+		                <li class="active">
+		                	<a href="/"><i class="fa fa-home fa-lg"></i></a>
+		                </li>
+		                <li class="dropdown">
+		                	<a href="/products" class="dropdown-toggle" data-toggle="dropdown">
+		                		Master Entry <b class="caret"></b>
+		                	</a>
+		                    <ul class="dropdown-menu" role="menu">
+		                        <li>
+		                        	<a href="groups/groups.html">Groups</a>
+		                        </li>
+		                    </ul>
+		                </li>
+		                <li class="dropdown">
+		                	<a href="/products" class="dropdown-toggle" data-toggle="dropdown">
+		                		Products <b class="caret"></b>
+		                	</a>
+		                    <ul class="dropdown-menu" role="menu">
+		                        <li>
+		                        	<a href="/contact">Contact Us</a>
+		                        </li>
+		                    </ul>
+		                </li>
+		            </ul>
+		        </div>
+		    </div>
+		</div>
+		<!-- Navbar -->
+
+		<!-- Content -->
+		<div class="gxcpl-content-div">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h4 class="gxcpl-no-margin gxcpl-no-padding">
+							Restaurant Settings <span class="pull-right"><a href="#!" class="gxcpl-anchor" data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle"></i></a></span>
+						</h4>
+						<hr class="style7" />
+						<div class="gxcpl-ptop-10"></div>
+					</div>
+
+					<div class="col-md-12">
+						<div class="gxcpl-card gxcpl-card-shadow gxcpl-card-white">
+							<div class="gxcpl-card-header">
+								<h4 class="gxcpl-no-margin">Business Details</h4>
+							</div>
+							<div class="gxcpl-card-body">
+								<div class="gxcpl-ptop-20"></div>
+								<div class="row">
+									<div class="col-md-2 gxcpl-form-col-height">
+										<strong>Business Name</strong>
+									</div>
+									<div class="col-md-10">
+										<input type="text" class="gxcpl-input" name="business_name" />
+									</div>
+								</div>
+
+								<div class="gxcpl-ptop-10"></div>
+
+								<div class="gxcpl-ptop-20"></div>
+							</div>
+							<div class="gxcpl-card-footer text-center">
+								<button class="btn btn-default gxcpl-btn ripple">
+									<i class="fa fa-save"></i> SAVE
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<!-- Content -->
+
+		<!-- Page Modals -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">Help Notes</h4>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="headingOne">
+											<strong>
+												<a class="gxcpl-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+													Name & Logo
+												</a>
+											</strong>
+										</div>
+										<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+											<div class="panel-body">
+												<strong>Name: </strong>Enter the name of your restaurant here. This name will appear on the bill, vendor purchase order, etc.
+												<br>
+												<strong>Logo: </strong>The logo of your restaurant goes here. This logo will appear on the bill, vendor purchase order, attendance record, payslip, etc. It provides the branding of your business
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="headingTwo">
+											<strong>
+												<a class="gxcpl-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+													Restaurant Name Convention
+												</a>
+											</strong>
+										</div>
+										<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+											<div class="panel-body">
+												Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="headingThree">
+											<strong>
+												<a class="gxcpl-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+													Restaurant Name Convention
+												</a>
+											</strong>
+										</div>
+										<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+											<div class="panel-body">
+												Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default gxcpl-btn ripple btn-xs" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Page Modals -->
+
+		<!-- Site Content -->
+
+		<!-- Site Footer -->
+		<div class="gxcpl-ptop-30"></div>
+		<footer class="footer">
+			<div class="col-md-12">
+				&copy; AWADH | Powered by GXCPL
+			</div>
+		</footer>
+		<!-- Site Footer -->
+
+		<!-- Scripts -->
+		<script type="text/javascript" src="../assets/js/jquery-2.0.0.js"></script>
+		<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+		<script type="text/javascript" src="../assets/js/lv-ripple.jquery.js"></script>
+		<script type="text/javascript">
+			// Ripple
+			(function(exports){
+				$.ripple.init();
+			})(window);
+			// Ripple
+		</script>
+		<!-- Scripts -->
+	</body>
+</html>

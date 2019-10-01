@@ -1,4 +1,4 @@
-/*	
+	
 	Company Name:	GenXCoders Pvt. Ltd.
 	Author Name:	Er Aashish Handa
 	Date:			Sep 29, 2019
@@ -62,7 +62,18 @@ footer {
 .gxcpl-card-white {
 	background-color: rgba(255,255,255,1);
 }
+.gxcpl-card-dark-blue {
+	background-color: #1976D2;
+	color: #ffffff;
+}
 /* Background Color */
+
+/* Link Color */
+a.gxcpl-anchor {
+	color: #333333 !important;
+	text-decoration: none;
+}
+/* Link Color */
 
 /* Spacing */
 .gxcpl-ptop-5 {
@@ -91,6 +102,7 @@ footer {
 }
 hr.style7 {
 	margin: 5px 0px 10px;
+	border-top: 1px solid #2121;
 	border-bottom: 1px solid #fff;
 }
 /* Spacing */
@@ -158,6 +170,15 @@ img.gxcpl-login-logo {
 /* Login */
 
 /* Form */
+.gxcpl-input {
+	border: 1px solid rgba(26,54,126,0.125);
+	border-radius: 4px;
+	padding: 5px 10px;
+}
+.gxcpl-form-col-height {
+	height: 25px;
+	line-height: 25px;
+}
 .gxcpl-input-text {
 	border: 0px;
 	border-bottom: 2px solid rgba(26,54,126,0.125);
@@ -268,4 +289,4 @@ th, td {
 th, td {
 	border-bottom: 1px solid rgba(26,54,126,0.125);
 }
-/* Table */
+/* Table 
