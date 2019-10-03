@@ -13,11 +13,12 @@
 		<meta name="description" content="GXCPL - Restaurant Management System">
 		<meta name="keywords" content="GenXCoders, Restaurant Management System, RMS, GXCPL, Nagpur, Best Restaurant Management System">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<title>Settings: Taxes</title>
+		<title>Settings: Certification</title>
 		<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="../assets/css/lv-ripple.css" />
 		<link rel="stylesheet" type="text/css" href="../assets/css/gxcpl.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/css/lightbox.css" />
 	</head>
 	<body>
 
@@ -66,7 +67,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h4 class="gxcpl-no-margin gxcpl-no-padding">
-							Master Settings: Taxation <span class="pull-right"><a href="#!" class="gxcpl-anchor" data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle"></i></a></span>
+							Master Settings: Certifications <span class="pull-right"><a href="#!" class="gxcpl-anchor" data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle"></i></a></span>
 						</h4>
 						<hr class="style7" />
 						<div class="gxcpl-ptop-10"></div>
@@ -85,11 +86,11 @@
 									<div class="row">
 										<div class="col-md-12">
 											<label class="gxcpl-label">
-												Taxation Head
+												Certificate Name
 											</label>
 										</div>
 										<div class="col-md-12">
-											<input class="gxcpl-input-text gxcpl-transition" type="text" name="tax_title" />
+											<input class="gxcpl-input-text gxcpl-transition" type="text" name="certificate_title" />
 										</div>
 									</div>
 									<div class="gxcpl-ptop-10"></div>
@@ -97,11 +98,23 @@
 									<div class="row">
 										<div class="col-md-12">
 											<label class="gxcpl-label">
-												Taxation Value (in %age) <br><small class="text-muted"><em>Do not include % sign</em></small>
+												Certificate Number
 											</label>
 										</div>
 										<div class="col-md-12">
-											<input class="gxcpl-input-text gxcpl-transition" type="text" name="tax_value" />
+											<input class="gxcpl-input-text gxcpl-transition" type="text" name="certificate_number" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Certificate Image <br><small class="text-muted"><em>(Optional)</em></small>
+											</label>
+										</div>
+										<div class="col-md-12">
+											<input class="gxcpl-input-text gxcpl-transition" type="file" name="certificate_image" />
 										</div>
 									</div>
 									<div class="gxcpl-ptop-10"></div>
@@ -127,10 +140,10 @@
 										Sr. No.
 									</th>
 									<th width="*">
-										Taxation Type
+										Certificate Name
 									</th>
 									<th width="*">
-										Taxation %age
+										Certificate Number
 									</th>
 									<th width="30%">
 										Action
@@ -143,10 +156,12 @@
 										1.
 									</td>
 									<td>
-										GST #1
+										<a class="example-image-link gxcpl-anchor" href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg" data-lightbox="example-1">
+											<img class="example-image gxcpl-list-thumbnail" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg" alt="image-1" />
+										</a> GST
 									</td>
 									<td>
-										18%
+										27AAGCGXXXXL1Z2
 									</td>
 									<td>
 										<div class="btn-group btn-group-xs" role="group" aria-label="...">
@@ -202,6 +217,7 @@
 
 		<!-- Scripts -->
 		<script type="text/javascript" src="../assets/js/jquery-2.0.0.js"></script>
+		<script type="text/javascript" src="../assets/js/lightbox.js"></script>
 		<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
 		<script type="text/javascript" src="../assets/js/lv-ripple.jquery.js"></script>
 		<script type="text/javascript">
