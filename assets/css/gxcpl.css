@@ -1,4 +1,4 @@
-	
+/*
 	Company Name:	GenXCoders Pvt. Ltd.
 	Author Name:	Er Aashish Handa
 	Date:			Sep 29, 2019
@@ -31,7 +31,7 @@ footer {
 
 .footer {
 	position: absolute;
-	/*bottom: 0;*/
+	bottom: 0 !important;
 	width: 100%;
 	/* Set the fixed height of the footer here */
 	height: 50px;

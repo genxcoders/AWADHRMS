@@ -1,7 +1,7 @@
 <!-- 
 	Company Name:	GenXCoders Pvt. Ltd.
 	Author Name:	Er Aashish Handa
-	Date:			Sep 30, 2019
+	Date:			Oct 04, 2019
 	Client:			Gaurav Sharma
 	Project Name:	AWADH
 	Project Type:	Restaurant Management System
@@ -13,7 +13,7 @@
 		<meta name="description" content="GXCPL - Restaurant Management System">
 		<meta name="keywords" content="GenXCoders, Restaurant Management System, RMS, GXCPL, Nagpur, Best Restaurant Management System">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<title>Department Page</title>
+		<title>Settings: Taxes</title>
 		<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="../assets/css/lv-ripple.css" />
@@ -31,15 +31,15 @@
 		        </div>
 		        <div class="collapse navbar-collapse navbar-menubuilder">
 		            <ul class="nav navbar-nav navbar-right">
-		                <li>
+		                <li class="active">
 		                	<a href="/"><i class="fa fa-home fa-lg"></i></a>
 		                </li>
-		                <li class="dropdown active">
-		                	<a href="#!" class="dropdown-toggle" data-toggle="dropdown">
+		                <li class="dropdown">
+		                	<a href="/products" class="dropdown-toggle" data-toggle="dropdown">
 		                		Master Entry <b class="caret"></b>
 		                	</a>
 		                    <ul class="dropdown-menu" role="menu">
-		                        <li class="active">
+		                        <li>
 		                        	<a href="department/department.html">Department</a>
 		                        </li>
 		                    </ul>
@@ -66,11 +66,12 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h4 class="gxcpl-no-margin gxcpl-no-padding">
-							Master Entry: Department
+							Master Settings: Taxation <span class="pull-right"><a href="#!" class="gxcpl-anchor" data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle"></i></a></span>
 						</h4>
 						<hr class="style7" />
 						<div class="gxcpl-ptop-10"></div>
 					</div>
+
 					<div class="col-md-3">
 						<!-- Group: Add New -->
 						<form name="add-department" id="add-department">
@@ -84,11 +85,23 @@
 									<div class="row">
 										<div class="col-md-12">
 											<label class="gxcpl-label">
-												Department Title
+												Taxation Head
 											</label>
 										</div>
 										<div class="col-md-12">
-											<input class="gxcpl-input-text gxcpl-transition" type="text" name="dept_title" />
+											<input class="gxcpl-input-text gxcpl-transition" type="text" name="tax_title" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Taxation Value (in %age) <br><small class="text-muted"><em>Do not include % sign</em></small>
+											</label>
+										</div>
+										<div class="col-md-12">
+											<input class="gxcpl-input-text gxcpl-transition" type="text" name="tax_value" />
 										</div>
 									</div>
 									<div class="gxcpl-ptop-10"></div>
@@ -114,7 +127,10 @@
 										Sr. No.
 									</th>
 									<th width="*">
-										Department Name
+										Taxation Type
+									</th>
+									<th width="*">
+										Taxation %age
 									</th>
 									<th width="30%">
 										Action
@@ -127,169 +143,10 @@
 										1.
 									</td>
 									<td>
-										Department #1
+										GST #1
 									</td>
 									<td>
-										<div class="btn-group btn-group-xs" role="group" aria-label="...">
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-trash"></i>
-											</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="text-center">
-										2.
-									</td>
-									<td>
-										Department #2
-									</td>
-									<td>
-										<div class="btn-group btn-group-xs" role="group" aria-label="...">
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-trash"></i>
-											</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="text-center">
-										3.
-									</td>
-									<td>
-										Department #3
-									</td>
-									<td>
-										<div class="btn-group btn-group-xs" role="group" aria-label="...">
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-trash"></i>
-											</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="text-center">
-										4.
-									</td>
-									<td>
-										Department #4
-									</td>
-									<td>
-										<div class="btn-group btn-group-xs" role="group" aria-label="...">
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-trash"></i>
-											</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="text-center">
-										5.
-									</td>
-									<td>
-										Department #5
-									</td>
-									<td>
-										<div class="btn-group btn-group-xs" role="group" aria-label="...">
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-trash"></i>
-											</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="text-center">
-										6.
-									</td>
-									<td>
-										Department #6
-									</td>
-									<td>
-										<div class="btn-group btn-group-xs" role="group" aria-label="...">
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-trash"></i>
-											</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="text-center">
-										7.
-									</td>
-									<td>
-										Department #7
-									</td>
-									<td>
-										<div class="btn-group btn-group-xs" role="group" aria-label="...">
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-trash"></i>
-											</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="text-center">
-										8.
-									</td>
-									<td>
-										Department #8
-									</td>
-									<td>
-										<div class="btn-group btn-group-xs" role="group" aria-label="...">
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-trash"></i>
-											</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="text-center">
-										9.
-									</td>
-									<td>
-										Department #9
-									</td>
-									<td>
-										<div class="btn-group btn-group-xs" role="group" aria-label="...">
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-trash"></i>
-											</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="text-center">
-										10.
-									</td>
-									<td>
-										Department #10
+										18%
 									</td>
 									<td>
 										<div class="btn-group btn-group-xs" role="group" aria-label="...">
