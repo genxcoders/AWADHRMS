@@ -1,0 +1,871 @@
+<!-- 
+	Company Name:	GenXCoders Pvt. Ltd.
+	Author Name:	Er Aashish Handa
+	Date:			Oct 04, 2019
+	Client:			Gaurav Sharma
+	Project Name:	AWADH
+	Project Type:	Restaurant Management System
+ -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="GXCPL - Restaurant Management System">
+		<meta name="keywords" content="GenXCoders, Restaurant Management System, RMS, GXCPL, Nagpur, Best Restaurant Management System">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<title>Registration</title>
+		<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="../assets/css/lv-ripple.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/css/gxcpl.css" />
+	</head>
+	<body>
+
+		<!-- Site Content -->
+		<!-- Navbar -->
+		<div id="gxcpl" class="navbar navbar-default navbar-fixed-top gxcpl-navbar-shadow" role="navigation">
+		    <div class="container-fluid">
+		        <div class="navbar-header"><a class="navbar-brand" href="https://www.gxcpl.com/RMS">RMS</a>
+		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+		            </button>
+		        </div>
+		        <div class="collapse navbar-collapse navbar-menubuilder">
+		            <ul class="nav navbar-nav navbar-right">
+		                <li class="active">
+		                	<a href="/"><i class="fa fa-home fa-lg"></i></a>
+		                </li>
+		                <li class="dropdown">
+		                	<a href="/products" class="dropdown-toggle" data-toggle="dropdown">
+		                		Master Entry <b class="caret"></b>
+		                	</a>
+		                    <ul class="dropdown-menu" role="menu">
+		                        <li>
+		                        	<a href="department/department.html">Department</a>
+		                        </li>
+		                    </ul>
+		                </li>
+		                <li class="dropdown">
+		                	<a href="/products" class="dropdown-toggle" data-toggle="dropdown">
+		                		Products <b class="caret"></b>
+		                	</a>
+		                    <ul class="dropdown-menu" role="menu">
+		                        <li>
+		                        	<a href="/contact">Contact Us</a>
+		                        </li>
+		                    </ul>
+		                </li>
+		            </ul>
+		        </div>
+		    </div>
+		</div>
+		<!-- Navbar -->
+
+		<!-- Content -->
+		<div class="gxcpl-content-div">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<h4 class="gxcpl-no-margin gxcpl-no-padding">
+							Register Employee <span class="pull-right"><a href="#!" class="gxcpl-anchor" data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle"></i></a></span>
+						</h4>
+						<hr class="style7" />
+						<div class="gxcpl-ptop-10"></div>
+					</div>
+
+					<div class="col-md-3">
+						<div class="gxcpl-card gxcpl-card-shadow gxcpl-card-white">
+							<div class="gxcpl-card-header">
+								<h4 class="gxcpl-no-margin">
+									Add Employee
+								</h4>
+							</div>
+							<div class="gxcpl-card-body">
+								<div class="row">
+									<div class="col-md-12 text-center">
+										<label class="gxcpl-label text-muted">
+											<u>Personal Information</u>
+										</label>
+									</div>
+								</div>
+								<div class="gxcpl-ptop-10"></div>
+
+								<div class="row">
+									<div class="col-md-12">
+										<label class="gxcpl-label">
+											Employee Photo
+										</label>
+									</div>
+									<div class="col-md-12">
+										<input class="gxcpl-input-text gxcpl-transition" type="file" name="emp_photo" />
+									</div>
+								</div>
+								<div class="gxcpl-ptop-10"></div>
+
+								<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-6">
+										<label class="gxcpl-label">
+											First Name
+										</label>
+										<input class="gxcpl-input-text gxcpl-transition" type="text" name="emp_fname" />
+									</div>
+								
+									<div class="col-md-6 col-sm-6 col-xs-6">
+										<label class="gxcpl-label">
+											Last Name
+										</label>
+										<input class="gxcpl-input-text gxcpl-transition" type="text" name="emp_lname" />
+									</div>
+								</div>
+								<div class="gxcpl-ptop-10"></div>
+
+								<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-6">
+										<label class="gxcpl-label">
+											Gender
+										</label>
+										<select class="gxcpl-input-text gxcpl-transition" type="text" name="emp_gender" >
+											<option id="-" value="-" selected disabled>Please Select</option>
+										</select>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-6">
+										<label class="gxcpl-label">
+											Mobile Number
+										</label>
+										<input class="gxcpl-input-text gxcpl-transition" type="text" name="emp_mobile" />
+									</div>
+								</div>
+								<div class="gxcpl-ptop-10"></div>
+							</div>
+
+							<div class="gxcpl-card-body">
+								<div class="row">
+									<div class="col-md-12 text-center">
+										<label class="gxcpl-label text-muted">
+											<u>Identity Information</u>
+										</label>
+									</div>
+								</div>
+								<div class="gxcpl-ptop-10"></div>
+
+								<div class="row">
+									<div class="col-md-12">
+										<label class="gxcpl-label">
+											Aadhaar Card
+										</label>
+									</div>
+									<div class="col-md-12">
+										<input class="gxcpl-input-text gxcpl-transition" type="file" name="emp_photo" />
+									</div>
+								</div>
+								<div class="gxcpl-ptop-10"></div>
+
+								<div class="row">
+									<div class="col-md-12">
+										<label class="gxcpl-label">
+											Finger Print Document
+										</label>
+									</div>
+									<div class="col-md-12">
+										<input class="gxcpl-input-text gxcpl-transition" type="file" name="emp_photo" />
+									</div>
+								</div>
+								<div class="gxcpl-ptop-10"></div>
+							</div>
+
+							<div class="gxcpl-card-body">
+								<div class="row">
+									<div class="col-md-12 text-center">
+										<label class="gxcpl-label text-muted">
+											<u>Employment Information</u>
+										</label>
+									</div>
+								</div>
+								<div class="gxcpl-ptop-10"></div>
+
+								<div class="row">
+									<div class="col-md-12">
+										<label class="gxcpl-label">
+											Employee Machine Id
+										</label>
+									</div>
+									<div class="col-md-12">
+										<input class="gxcpl-input-text gxcpl-transition" type="text" name="emp_machine_id" />
+									</div>
+								</div>
+								<div class="gxcpl-ptop-10"></div>
+
+								<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-6">
+										<label class="gxcpl-label">
+											Department
+										</label>
+										<select class="gxcpl-input-text gxcpl-transition" type="text" name="emp_department" >
+											<option id="-" value="-" selected disabled>Please Select</option>
+										</select>
+									</div>
+
+									<div class="col-md-6 col-sm-6 col-xs-6">
+										<label class="gxcpl-label">
+											Designation
+										</label>
+										<select class="gxcpl-input-text gxcpl-transition" type="text" name="emp_designation" >
+											<option id="-" value="-" selected disabled>Please Select</option>
+										</select>
+									</div>
+								</div>
+								<div class="gxcpl-ptop-10"></div>
+
+								<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-6">
+										<label class="gxcpl-label">
+											Reports To (Manager)
+										</label>
+										<select class="gxcpl-input-text gxcpl-transition" type="text" name="emp_manager" >
+											<option id="-" value="-" selected disabled>Please Select</option>
+										</select>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-6">
+										<label class="gxcpl-label">
+											Employment Status
+										</label>
+										<br>	
+										<input type="checkbox" name="emp_status" /> Active
+									</div>
+								</div>
+								<div class="gxcpl-ptop-10"></div>
+
+							</div>
+
+							<div class="gxcpl-card-body">
+								<div class="row">
+									<div class="col-md-12 text-center">
+										<label class="gxcpl-label text-muted">
+											<u>Login Account Details</u>
+										</label>
+									</div>
+								</div>
+								<div class="gxcpl-ptop-10"></div>
+
+								<div class="row">
+									<div class="col-md-12">
+										<label class="gxcpl-label">
+											Email
+										</label>
+									</div>
+
+									<div class="col-md-12">
+										<input class="gxcpl-input-text gxcpl-transition" type="text" name="emp_email" />
+									</div>
+								</div>
+								<div class="gxcpl-ptop-10"></div>
+
+								<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-6">
+										<label class="gxcpl-label">
+											Password
+										</label>
+										<input class="gxcpl-input-text gxcpl-transition" type="password" name="emp_password" />
+									</div>
+
+									<div class="col-md-6 col-sm-6 col-xs-6">
+										<label class="gxcpl-label">
+											Confirm Password
+										</label>
+										<input class="gxcpl-input-text gxcpl-transition" type="password" name="emp_repeat_password" />
+									</div>
+								</div>
+								<div class="gxcpl-ptop-10"></div>
+
+							</div>
+
+							<div class="gxcpl-card-footer text-center">
+								<button class="btn btn-default gxcpl-btn ripple">
+									<i class="fa fa-save"></i> SAVE
+								</button>
+							</div>
+						</div>
+						<div class="gxcpl-ptop-30"></div>
+					</div>
+
+					<div class="col-md-9">
+						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+							<div class="panel panel-default gxcpl-card-shadow">
+								<div class="panel-heading" role="tab" id="headingOne">
+									<strong>
+										<a class="gxcpl-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+											Department Name #1
+										</a>
+									</strong>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="panel panel-default gxcpl-card-shadow">
+								<div class="panel-heading" role="tab" id="headingTwo">
+									<strong>
+										<a class="gxcpl-anchor" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+											Department Name #2
+										</a>
+									</strong>
+								</div>
+								<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="panel panel-default gxcpl-card-shadow">
+								<div class="panel-heading" role="tab" id="headingThree">
+									<strong>
+										<a class="gxcpl-anchor" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+											Department Name #3
+										</a>
+									</strong>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<img class="gxcpl-emp-photo" src="../assets/images/profile-image.jpg" />
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															Aashish Handa
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<!-- Content -->
+
+		<!-- Site Content -->
+
+		<!-- Site Footer -->
+		<div class="gxcpl-ptop-30"></div>
+		<footer class="footer">
+			<div class="col-md-12">
+				&copy; AWADH | Powered by GXCPL
+			</div>
+		</footer>
+		<!-- Site Footer -->
+
+		<!-- Scripts -->
+		<script type="text/javascript" src="../assets/js/jquery-2.0.0.js"></script>
+		<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+		<script type="text/javascript" src="../assets/js/lv-ripple.jquery.js"></script>
+		<script type="text/javascript">
+			// Ripple
+			(function(exports){
+				$.ripple.init();
+			})(window);
+			// Ripple
+		</script>
+		<!-- Scripts -->
+	</body>
+</html>

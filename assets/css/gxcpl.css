@@ -196,7 +196,7 @@ img.gxcpl-login-logo {
 }
 select {
 	width: 100%;
-	height: 30px;
+	height: 25px;
 	border: 0px;
 	border-bottom: 1px solid rgba(26,54,126,0.125);
 
@@ -327,8 +327,56 @@ img.gxcpl-list-thumbnail {
 	border-top-right-radius: 0px;
 	color: #ffffff;
 }
-.panel-group .panel + .panel {
+.gxcpl-panel-group .panel + .panel {
 	margin-top: 0px;
 	border-top: 1px solid rgba(25, 118, 210, 1);
 }
 /* Panel Settings */
+
+/* Employee Card */
+.gxcpl-emp-card {
+	border:1px solid rgba(0,0,0,0.1); 
+	width: 100%; 
+	height: 180px; 
+	border-radius: 4px; 
+	background-color: rgba(0,0,0,0.05);
+}
+.gxcpl-emp-card-header {
+	width: 100%;
+	height: 90px;
+	border-radius: 4px 4px 0px 0px;
+	background-color: #8e44ad;
+	position: relative;
+}
+.gxcpl-emp-card-header > img.gxcpl-emp-photo {
+	margin: auto;
+	display: block;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border: 4px solid rgba(0,0,0,0.25);
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+}
+.gxcpl-emp-card-body {
+	width: 100%;
+	height: 50px;
+}
+.gxcpl-emp-card-body > .gxcpl-emp-card-name {
+	width: 100%;
+	height: 50px;
+	line-height: 20px;
+	font-size: 18px;
+	text-transform: uppercase;
+	padding: 5px 10px;
+}
+.gxcpl-emp-card-footer {
+	border-top: 1px solid rgba(0,0,0,0.15);
+	width: 100%;
+	height: 40px;
+	padding: 3px;
+}
+/* Employee Card */
