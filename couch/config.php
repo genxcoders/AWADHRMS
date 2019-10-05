@@ -164,7 +164,7 @@
     // VERY IMPORTANT!
     // Set the following to '1' ONLY IF YOU HAVE BOUGHT A COMMERCIAL LICENSE for the site you are using this file on.
     // Doing so otherwise is NOT PERMITTED and will constitute a violation of the CPAL license this software is provided under.
-    define( 'K_PAID_LICENSE', 0 );
+    define( 'K_PAID_LICENSE', 1 );
 
         // Rebranding. Uncomment the following defines and add your info.
         // 99a. Company Logo on light background  (Multiple of [<= 450] x 57 pixels. Needs to be placed within 'couch/theme/images/' folder)
@@ -190,4 +190,4 @@
     // <a href="https://www.couchcms.com/" title="CouchCMS - Simple Open-Source Content Management">CouchCMS</a></div>
     //
     // Failing to do so will constitute a violation of the CPAL license this software is provided under.
-    define( 'K_REMOVE_FOOTER_LINK', 0 );
+    define( 'K_REMOVE_FOOTER_LINK', 1 );

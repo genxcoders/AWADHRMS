@@ -1,0 +1,79 @@
+					<div class="col-md-3">
+						<!-- Group: Add New -->
+						<cms:embed "department/create_department.html" />
+						<!-- Group: Add New -->
+						<div class="gxcpl-ptop-20"></div>
+					</div>
+					<div class="col-md-9">
+						<!-- Group: List -->
+						<table class="gxcpl-card-shadow gxcpl-card-white">
+							<thead class="gxcpl-table-header">
+								<tr>
+									<th width="65px">
+										Sr. No.
+									</th>
+									<th width="*">
+										Department Name
+									</th>
+									<th width="30%">
+										Action
+									</th>
+								</tr>
+							</thead>
+
+							<tbody class="gxcpl-table-body">
+								<cms:pages masterpage=k_template_name paginate='1' limit='10' show_future_entries='1' >
+								<cms:no_results>
+								<tr>
+									<td colspan="3" class="text-center">
+										- No Departments Found -
+									</td>
+								</tr>
+								</cms:no_results>
+								<tr>
+									<td class="text-center">
+										<cms:show k_absolute_count />.
+									</td>
+									<td>
+										<cms:show k_page_title />
+									</td>
+									<td>
+										<div class="btn-group btn-group-xs" role="group" aria-label="...">
+											<button type="button" class="btn btn-default">
+												<i class="fa fa-edit"></i>
+											</button>
+											<button type="button" class="btn btn-default">
+												<i class="fa fa-trash"></i>
+											</button>
+										</div>
+									</td>
+								</tr>
+								</cms:pages>
+							</tbody>
+							<tfoot class="gxcpl-table-footer">
+								<tr>
+									<td colspan="3" class="text-center">
+										<cms:pages masterpage=k_template_name show_future_entries="1" paginate='1' limit='10'>
+										<cms:paginator />
+										</cms:pages>
+										<!-- <div class="btn-group btn-group-xs" role="group" aria-label="...">
+											<button type="button" class="btn btn-default">
+												<
+											</button>
+											<button type="button" class="btn btn-default">
+												1
+											</button>
+											<button type="button" class="btn btn-default">
+												2
+											</button>
+											<button type="button" class="btn btn-default">
+												>
+											</button>
+										</div> -->
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+						<!-- Group: List -->
+						<div class="gxcpl-ptop-20"></div>
+					</div>
