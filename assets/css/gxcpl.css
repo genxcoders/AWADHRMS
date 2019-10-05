@@ -369,9 +369,10 @@ img.gxcpl-list-thumbnail {
 	width: 100%;
 	height: 50px;
 	line-height: 20px;
-	font-size: 18px;
+	font-size: 17px;
 	text-transform: uppercase;
 	padding: 5px 10px;
+	letter-spacing: -1px;
 }
 .gxcpl-emp-card-footer {
 	border-top: 1px solid rgba(0,0,0,0.15);
