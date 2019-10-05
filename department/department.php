@@ -20,7 +20,7 @@
 <cms:embed 'header.html' />
 		<!-- Content -->
 		<div class="gxcpl-content-div">
-			<cms:match_route debug='1' />
+			<cms:match_route debug='0' />
 
 			<div class="container-fluid">
 				<div class="row">

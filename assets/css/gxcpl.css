@@ -79,6 +79,9 @@ a.gxcpl-anchor {
 a.gxcpl-fc-white, .gxcpl-fc-white {
 	color: #ffffff !important;
 }
+.gxcpl-fc-21 {
+	color: #212121;
+}
 /* Font Color */
 
 /* Spacing */
@@ -289,12 +292,17 @@ table > thead.gxcpl-table-header, table > tbody.gxcpl-table-body, table > tfoot.
 	padding: 5px 10px;
 	line-height: 40px;
 }
-
+th > tr > td {
+	background-color: rgba(0,0,0,0.05);
+}
 th, td {
 	padding: 0px 10px;
 }
 th, td {
 	border-bottom: 1px solid rgba(26,54,126,0.125);
+}
+tr:hover {
+	background-color: rgba(0,0,0,0.05);
 }
 /* Table 
 
@@ -423,3 +431,47 @@ h2.gxcpl-emp-status-inactive {
 	color: #c0392b;
 }
 /* Employee Card */
+
+/* Paginator */
+div.pagination {
+    padding: 0px;
+    margin: 0px;
+}
+
+div.pagination a {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #1976D2;
+    zoom: 100%;
+    text-decoration: none; /* no underline */
+    color: #ffffff;
+    background-color: #1976D2;
+}
+div.pagination a:hover, div.pagination a:active {
+    border: 1px solid #FFC107;
+    background-color: #FFC107;
+    color: #212121;
+}
+div.pagination span.page_current {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #FFC107;
+
+    * zoom: 100%;
+
+    font-weight: bold;
+    background-color: #FFC107;
+    color: #212121;
+}
+div.pagination span.page_disabled {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #EEE;
+
+    * zoom: 100%;
+
+    color: #DDD;
+}
+
+* span.elipsis {zoom:100%}
+/* Paginator */
