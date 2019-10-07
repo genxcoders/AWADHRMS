@@ -1,0 +1,37 @@
+                        <cms:pages id="<cms:get_cookie 'delete_department' />" limit='1' show_future_enteries='1'>
+    					<cms:form 
+                            masterpage=k_template_name
+                            mode='edit'
+                            page_id=k_page_id
+                            method='post' 
+                            anchor='0'
+                        >
+                        <cms:if k_success>
+                            <cms:db_delete_form />
+                            <cms:if k_success>
+                                <cms:redirect url="<cms:route_link 'list_dept' />" /> 
+                            </cms:if>
+                        </cms:if>
+    					<div class="col-md-12">
+    						<div class="gxcpl-br-2 gxcpl-shadow-2 gxcpl-bg-white gxcpl-padding-30">
+    							<!-- Delete -->
+    								<div class="row">
+                                        <div class="col-md-12 text-center">
+                                            Are you sure you want to Delete <strong>"<cms:show k_page_title />"</strong> department?
+                                            <div class="gxcpl-ptop-20"></div>
+                                        </div>
+                                        <div class="col-md-12">
+                                        	<center>
+    	                                    	<cms:input name='submit' type="submit" class="btn btn-danger btn-xs gxcpl-fw-700 gxcpl-shadow-2" value="CONFIRM DELETE" />
+    	                                        <button class="btn btn-default btn-xs gxcpl-fw-700 gxcpl-shadow-2" type="button" onclick="window.location.href='<cms:route_link 'list_dept' />';">
+    	                                            CANCEL
+    	                                        </button>
+    	                                    </center>
+    	                                    <div class="gxcpl-ptop-10"></div>
+                                        </div>
+                                    </div>
+    							<!-- Delete -->
+    						</div>
+    					</div>
+    					</cms:form>
+                        </cms:pages>
