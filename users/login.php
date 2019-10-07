@@ -1,3 +1,5 @@
+<?php require_once( '../couch/cms.php' ); ?>
+<cms:template title='Login' hidden='1' parent="_extusers_" order="2" />
 <!-- 
 	Company Name:	GenXCoders Pvt. Ltd.
 	Author Name:	Er Aashish Handa
@@ -6,20 +8,7 @@
 	Project Name:	AWADH
 	Project Type:	Restaurant Management System
  -->
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="description" content="GXCPL - Restaurant Management System">
-		<meta name="keywords" content="GenXCoders, Restaurant Management System, RMS, GXCPL, Nagpur, Best Restaurant Management System">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<title>Login Page</title>
-		<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
-		<link rel="stylesheet" type="text/css" href="../assets/css/lv-ripple.css" />
-		<link rel="stylesheet" type="text/css" href="../assets/css/gxcpl.css" />
-	</head>
-	<body>
+<cms:embed 'header.html' />
 
 		<!-- Site Content -->
 		<div class="gxcpl-center-div">
@@ -130,3 +119,5 @@
 		<!-- Scripts -->
 	</body>
 </html>
+<cms:embed 'footer.html' />
+<?php COUCH::invoke(); ?>
