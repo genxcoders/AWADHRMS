@@ -24,6 +24,8 @@ if( defined('K_ADMIN') ){
         
         $FUNCS->register_admin_menuitem( array('name'=>'_extusers_', 'title'=>'Extended Users', 'is_header'=>'1', 'weight'=>'100')  );
         $FUNCS->register_admin_menuitem( array('name'=>'_masterentry_', 'title'=>'Master Entry', 'is_header'=>'1', 'weight'=>'1')  );
+
+        $FUNCS->register_admin_menuitem( array('name'=>'_test_', 'title'=>'Test Code', 'is_header'=>'1', 'weight'=>'200')  );
     }
 }
 

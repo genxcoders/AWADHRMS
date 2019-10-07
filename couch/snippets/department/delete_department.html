@@ -1,15 +1,17 @@
-                        <cms:pages id="<cms:get_cookie 'delete_department' />" limit='1' show_future_enteries='1'>
+                        <cms:pages id=rt_id limit='1' show_future_enteries='1'>
     					<cms:form 
                             masterpage=k_template_name
                             mode='edit'
-                            page_id=k_page_id
+                            page_id=rt_id
                             method='post' 
                             anchor='0'
+                            id='delete_department_form'
+                            name='delete_department_form'
                         >
                         <cms:if k_success>
                             <cms:db_delete_form />
                             <cms:if k_success>
-                                <cms:redirect url="<cms:route_link 'list_dept' />" /> 
+                                <cms:redirect url="<cms:route_link 'list_department' />" /> 
                             </cms:if>
                         </cms:if>
     					<div class="col-md-12">
@@ -23,7 +25,7 @@
                                         <div class="col-md-12">
                                         	<center>
     	                                    	<cms:input name='submit' type="submit" class="btn btn-danger btn-xs gxcpl-fw-700 gxcpl-shadow-2" value="CONFIRM DELETE" />
-    	                                        <button class="btn btn-default btn-xs gxcpl-fw-700 gxcpl-shadow-2" type="button" onclick="window.location.href='<cms:route_link 'list_dept' />';">
+    	                                        <button class="btn btn-default btn-xs gxcpl-fw-700 gxcpl-shadow-2" type="button" onclick="window.location.href='<cms:route_link 'list_department' />';">
     	                                            CANCEL
     	                                        </button>
     	                                    </center>

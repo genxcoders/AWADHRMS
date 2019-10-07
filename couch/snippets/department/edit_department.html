@@ -1,5 +1,4 @@
 						<div class="col-md-3">
-							<cms:set submit_success="<cms:get_flash 'submit_success' />" />
 							<cms:form
 						        masterpage=k_template_name
 						       	mode='edit'
@@ -7,6 +6,7 @@
 						        enctype='multipart/form-data'
 						        method='post'
 						        anchor='0'
+						        id='edit_department_form'
 						        >
 
 						        <cms:if k_success >

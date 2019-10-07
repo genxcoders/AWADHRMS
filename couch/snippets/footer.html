@@ -11,55 +11,31 @@
 
 		<cms:if k_template_name=='department/department.php'>
 		<!-- Department Delete Modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">Delete Department?</h4>
+						<h4 class="modal-title" id="exampleModalLabel">New message</h4>
 					</div>
 					<div class="modal-body">
-						<cms:pages id=rt_id limit='1' show_future_enteries='1'>
-    					<cms:form 
-                            masterpage=k_template_name
-                            mode='edit'
-                            page_id=k_page_id
-                            method='post' 
-                            anchor='0'
-                        >
-                        <cms:if k_success>
-                            <cms:db_delete_form />
-                            <cms:if k_success>
-                                <cms:redirect url="<cms:route_link 'list_dept' />" /> 
-                            </cms:if>
-                        </cms:if>
-    					<div class="col-md-12">
-    						<div class="gxcpl-br-2 gxcpl-shadow-2 gxcpl-bg-white gxcpl-padding-30">
-    							<!-- Delete -->
-    								<div class="row">
-                                        <div class="col-md-12 text-center">
-                                            Are you sure you want to delete <strong><cms:show k_page_title /></strong> department?
-                                            <div class="gxcpl-ptop-20"></div>
-                                        </div>
-                                        <div class="col-md-12">
-                                        	<center>
-    	                                    	<cms:input name='submit' type="submit" class="btn btn-danger btn-xs gxcpl-fw-700 gxcpl-shadow-2" value="CONFIRM DELETE" />
-    	                                        <button class="btn btn-default btn-xs gxcpl-fw-700 gxcpl-shadow-2" type="button" onclick="window.location.href='<cms:route_link 'list_dept' />';">
-    	                                            CANCEL
-    	                                        </button>
-    	                                    </center>
-    	                                    <div class="gxcpl-ptop-10"></div>
-                                        </div>
-                                    </div>
-    							<!-- Delete -->
-    						</div>
-    					</div>
-    					</cms:form>
-                        </cms:pages>
+						<cms:set asd="<span></span>" />
+						ASD::<cms:show asd />
+						
+						<form>
+							<div class="form-group">
+								<label for="recipient-name" class="control-label">Recipient:</label>
+								<input type="text" class="form-control" id="recipient-name">
+							</div>
+							<div class="form-group">
+								<label for="message-text" class="control-label">Message:</label>
+								<textarea class="form-control" id="message-text"></textarea>
+							</div>
+						</form>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
+						<button type="button" class="btn btn-primary">Send message</button>
 					</div>
 				</div>
 			</div>
@@ -85,6 +61,19 @@
 			    });
 			}, 4000);
 			// Auto Close Alert
+
+			// Modal
+
+			// Delete Department Modal
+			$('#exampleModal').on('show.bs.modal', function (event) {
+				var button = $(event.relatedTarget) // Button that triggered the modal
+				var recipient = button.data('whatever') // Extract info from data-* attributes
+				// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+				// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+				var modal = $(this)
+				modal.find('span').text(recipient);
+			})
+			// Delete Department Modal
 		</script>
 		<!-- Scripts -->
 	</body>

@@ -35,18 +35,19 @@
 										<cms:show k_absolute_count />.
 									</td>
 									<td>
-										<cms:show k_page_title />
+										<cms:show k_page_title /> [<cms:show k_page_id />]
 									</td>
 									<td>
 										<div class="btn-group btn-group-xs" role="group" aria-label="...">
 											<button type="button" class="btn btn-warning gxcpl-btn gxcpl-fc-21" onclick="window.location='<cms:route_link "edit_department" rt_id=k_page_id />';">
 												<i class="fa fa-edit"></i> EDIT
 											</button>
-											<button type="button" class="btn btn-danger gxcpl-btn" data-toggle="modal" data-target="#myModal">
-												<cms:set delete_page_id="<cms:show k_page_id />" />
-												<cms:set_cookie 'delete_department' value=delete_page_id />
-												<i class="fa fa-trash"></i> DELETE [<cms:get_cookie 'delete_department' />]
+
+											<button type="button" class="btn btn-danger gxcpl-btn" data-toggle="modal" data-target="#myModal" data-whatever="<cms:show k_page_id />">
+												<i class="fa fa-trash"></i> Delete
 											</button>
+												
+											
 										</div>
 									</td>
 								</tr>
