@@ -301,6 +301,9 @@ th, td {
 th, td {
 	border-bottom: 1px solid rgba(26,54,126,0.125);
 }
+tr {
+	border-radius: 2px 2px 0px 0px;
+}
 tr:hover {
 	background-color: rgba(0,0,0,0.08);
 }
