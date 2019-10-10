@@ -297,7 +297,7 @@ $(document).ready(function(){
 								<label for="checkbox<cms:show k_page_id />"></label>
 							</span>
 						</td>
-                        <td><cms:show k_page_title /></td>
+                        <td><cms:show k_page_title /> <small><em>{PageId: <cms:show k_page_id />} {Rt_Id: <cms:route_link "delete_department" rt_id=k_page_id />}</em></small></td>
                         <td>
                             <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -375,9 +375,9 @@ $(document).ready(function(){
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<cms:form
-			        masterpage=k_template_name
+			        masterpage='department/department.php'
 			       	mode='edit'
-		        	page_id=rt_id
+		        	page_id='21'
 			        enctype='multipart/form-data'
 			        method='post'
 			        anchor='0'
@@ -403,7 +403,7 @@ $(document).ready(function(){
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>Department Name</label>
-							<cms:input type="bound" class="form-control" required name='k_page_title' />
+							<cms:input type="bound" class="form-control" name='k_page_title' required='required' />
 						</div>				
 					</div>
 					<div class="modal-footer">
