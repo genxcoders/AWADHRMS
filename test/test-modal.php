@@ -26,7 +26,9 @@
 						<h4 class="modal-title" id="exampleModalLabel">New message</h4>
 					</div>
 					<div class="modal-body">
-						<cms:embed "department/create_department.html" />
+						<cms:form id="<div id='pageid'></div>">
+
+						</cms:form>
 						<cms:input name='nonce' class='my_nounce' type='text' value="<cms:create_nonce my_action />" />
 					</div>
 					<div class="modal-footer">
@@ -49,7 +51,7 @@
      			
 				var modal = $(this)
 				modal.find('.modal-body .my_nounce').text('New message to ' + nonce)
-				modal.find('.modal-body span').text('New message to ' + page_id)
+				modal.find('.modal-body form#pageid').val(page_id)
 			})
 		</script>
 
