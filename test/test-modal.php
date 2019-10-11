@@ -27,7 +27,7 @@
 					</div>
 					<div class="modal-body">
 						<cms:form id="<div id='pageid'></div>">
-
+							<span></span>
 						</cms:form>
 						<cms:input name='nonce' class='my_nounce' type='text' value="<cms:create_nonce my_action />" />
 					</div>
@@ -51,7 +51,7 @@
      			
 				var modal = $(this)
 				modal.find('.modal-body .my_nounce').text('New message to ' + nonce)
-				modal.find('.modal-body form#pageid').val(page_id)
+				modal.find('.modal-body form span').val(page_id)
 			})
 		</script>
 
