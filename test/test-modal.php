@@ -26,7 +26,8 @@
 						<h4 class="modal-title" id="exampleModalLabel">New message</h4>
 					</div>
 					<div class="modal-body">
-						// Show data-whatever value in a variable
+						<cms:embed "department/create_department.html" />
+						<cms:input name='nonce' class='my_nounce' type='text' value="<cms:create_nonce my_action />" />
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -47,7 +48,8 @@
      			
      			
 				var modal = $(this)
-				modal.find('.modal-title').text('New message to ' + recipient)
+				modal.find('.modal-body .my_nounce').text('New message to ' + nonce)
+				modal.find('.modal-body span').text('New message to ' + page_id)
 			})
 		</script>
 
