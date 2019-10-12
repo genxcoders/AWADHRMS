@@ -117,9 +117,9 @@
 												<button type="button" class="btn btn-warning gxcpl-btn gxcpl-fc-21" onclick="window.location='<cms:route_link "edit_department" rt_id=k_page_id />';">
 													<i class="fa fa-edit"></i> EDIT
 												</button>
-												<button type="button" class="btn btn-danger gxcpl-btn">
-													<i class="fa fa-trash"></i> DELETE
-												</button>
+												<button type="button" class="btn btn-danger gxcpl-btn" onclick="window.location='<cms:route_link "delete_department" rt_id=k_page_id />';">
+												<i class="fa fa-trash"></i> Delete
+											</button>
 											</div>
 										</td>
 									</tr>
@@ -129,22 +129,8 @@
 									<tr>
 										<td colspan="3" class="text-center">
 											<cms:pages masterpage=k_template_name show_future_entries="1" paginate='1' limit='10'>
-											<cms:paginator />
+												<cms:paginator />
 											</cms:pages>
-											<!-- <div class="btn-group btn-group-xs" role="group" aria-label="...">
-												<button type="button" class="btn btn-default">
-													<
-												</button>
-												<button type="button" class="btn btn-default">
-													1
-												</button>
-												<button type="button" class="btn btn-default">
-													2
-												</button>
-												<button type="button" class="btn btn-default">
-													>
-												</button>
-											</div> -->
 										</td>
 									</tr>
 								</tfoot>

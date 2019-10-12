@@ -1,3 +1,4 @@
+                        <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
                         <cms:pages id=rt_id limit='1' show_future_enteries='1'>
     					<cms:form 
                             masterpage=k_template_name
@@ -6,36 +7,39 @@
                             method='post' 
                             anchor='0'
                             id='delete_department_form'
-                            name='delete_department_form'
                         >
-                        <cms:if k_success>
-                            <cms:db_delete_form />
                             <cms:if k_success>
-                                <cms:redirect url="<cms:route_link 'list_department' />" /> 
+                                <cms:db_delete_form />
+                                <cms:if k_success>
+                                    <cms:redirect url="<cms:route_link 'list_department' />" /> 
+                                </cms:if>
                             </cms:if>
-                        </cms:if>
-    					<div class="col-md-12">
-    						<div class="gxcpl-br-2 gxcpl-shadow-2 gxcpl-bg-white gxcpl-padding-30">
-    							<!-- Delete -->
+    					
+    						<div class="gxcpl-card gxcpl-card-white gxcpl-card-shadow">
+                                <div class="gxcpl-card-header">
+                                    <h5 class="gxcpl-no-margin">
+                                        Confirm delete action
+                                    </h5>
+                                </div>
+                                <div class="gxcpl-card-body">
+                                    <!-- Delete -->
     								<div class="row">
-                                        <div class="col-md-12 text-center">
-                                            Are you sure you want to Delete <strong>"<cms:show k_page_title />"</strong> department?
-                                            <div class="gxcpl-ptop-20"></div>
-                                        </div>
                                         <div class="col-md-12">
-                                        	<center>
-    	                                    	<button name='submit' type="submit" class="btn btn-danger btn-xs gxcpl-fw-700 gxcpl-shadow-2">
-                                                    asd
-                                                </button>
-    	                                        <button class="btn btn-default btn-xs gxcpl-fw-700 gxcpl-shadow-2" type="button" onclick="window.location.href='<cms:route_link 'list_department' />';">
-    	                                            CANCEL
-    	                                        </button>
-    	                                    </center>
-    	                                    <div class="gxcpl-ptop-10"></div>
+                                            <div class="gxcpl-ptop-10"></div>
+                                            Are you sure you want to delete department <strong>"<cms:show k_page_title />"</strong>?
+                                            <div class="gxcpl-ptop-10"></div>
                                         </div>
                                     </div>
-    							<!-- Delete -->
-    						</div>
-    					</div>
+                                </div>
+                                <div class="gxcpl-card-footer text-center">
+                                    <cms:input name='submit' type="submit" class="btn btn-danger gxcpl-btn btn-sm" value="DELETE" />
+
+                                    <button class="btn btn-default gxcpl-btn btn-sm" type="button" onclick="window.location.href='<cms:route_link "list_department" rt_id=k_page_id />';">
+                                        Cancel
+                                    </button>
+                                    
+                                </div>
+        					</div>
     					</cms:form>
                         </cms:pages>
+                        </div>

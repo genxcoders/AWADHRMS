@@ -10,15 +10,17 @@
 	<body>
 		<cms:pages masterpage="department/department.php">
 			<cms:set page_to_delete=k_page_id scope='global' />
+			Page to delete=<cms:show page_to_delete /><br>
 			<cms:set my_action="delete_page_<cms:show page_to_delete />" scope='global' />
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-page-id="<cms:show k_page_id />" data-nonce="<cms:create_nonce my_action />" style="width: 200px;">
+			My Action=<cms:show my_action /><br>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-page-id="<cms:show k_page_id />" data-nonce="<cms:create_nonce my_action />" style="width: 200px;" id="delete_page_id">
 				<cms:show k_page_title /> <br><small><em>{Page Id::<cms:show k_page_id />}</em></small>
 			</button>
 			<div style="padding-top: 10px;"></div>
 		</cms:pages>
 
 
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		<div class="modal fade" id="delete_page_id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -42,17 +44,28 @@
 		<script type="text/javascript" src="../assets/js/jquery-2.0.0.js"></script>
 		<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
 		<script type="text/javascript">
-			$('#exampleModal').on('show.bs.modal', function (event) {
-				var button = $(event.relatedTarget) // Button that triggered the modal
-				var page_id = button.data('page-id')
-     			var nonce = button.data('nonce')
+			
 
-     			
-     			
-				var modal = $(this)
-				modal.find('.modal-body .my_nounce').text('New message to ' + nonce)
-				modal.find('.modal-body form span').val(page_id)
-			})
+		    $(document).on('click','#delete_page_id',function(e) {
+		    	var button = $(event.relatedTarget) // Button that triggered the modal
+				var page_id = button.data('page-id')
+ 				var nonce = button.data('nonce')
+				e.preventDefault();
+				$.ajax({
+					url:"<cms:link url='department/delete_department.html' />",
+					data:{page_id:"button.data('page-id')", my_nonce:"button.data('nonce')"},
+					contentType:"application/json; charset=utf-8",
+					async: false,
+			    	cache: false,
+					success: function(response)
+					{
+						var modal = $(this)
+						modal.find('.modal-body .my_nounce').text('New message to ' + nonce)
+						modal.find('.modal-body form span').val(page_id)
+						alert(response);
+					}
+				});
+ 			});
 		</script>
 
 	</body>

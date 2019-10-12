@@ -1,11 +1,11 @@
 						
 						<cms:form
-					        masterpage='department/department.php'
+					        masterpage='gender/gender.php'
 					        mode='create'
 					        enctype='multipart/form-data'
 					        method='post'
 					        anchor='0'
-					        id='create_department_form'
+					        id='create_gender_form'
 					        >
 
 					        <cms:if k_success >
@@ -16,29 +16,29 @@
 					                k_page_name = "<cms:show k_page_title />"
 					            />
 					            <cms:if k_success >
-						            <cms:set_cookie 'submit_success_create_department' value='Record added successfully.' expire='86400' />
-						            <cms:redirect url="<cms:route_link 'list_department' />" />
+						            <cms:set_cookie 'submit_success_create_gender' value='Record added successfully.' expire='86400' />
+						            <cms:redirect url="<cms:route_link 'list_gender' />" />
 						        </cms:if>
 					        </cms:if>
 
 							<div class="gxcpl-card gxcpl-card-white gxcpl-card-shadow">
 								<div class="gxcpl-card-header">
 									<h5 class="gxcpl-no-margin">
-										Add New / Edit Department
+										Add New / Edit Gender
 									</h5>
 								</div>
 								<div class="gxcpl-card-body">
 									
-					        		<cms:if "<cms:not_empty "<cms:get_cookie 'submit_success_create_department' />" />">
+					        		<cms:if "<cms:not_empty "<cms:get_cookie 'submit_success_create_gender' />" />">
 										<div class="row">
 											<div class="col-md-12">
 												<div class="alert alert-success alert-dismissible">
 													<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-													<strong><cms:get_cookie 'submit_success_create_department' /></strong>
+													<strong><cms:get_cookie 'submit_success_create_gender' /></strong>
 												</div>
 											</div>
 										</div>
-										<cms:delete_cookie 'submit_success_create_department' />
+										<cms:delete_cookie 'submit_success_create_gender' />
 									</cms:if>
 									
 									<cms:if k_error >
@@ -57,7 +57,7 @@
 									<div class="row">
 										<div class="col-md-12">
 											<label class="gxcpl-label">
-												Department Title
+												Gender Title
 											</label>
 										</div>
 										<div class="col-md-12">

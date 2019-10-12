@@ -1,11 +1,11 @@
 					<div class="col-md-3">
-						<!-- Group: Add New -->
-						<cms:embed "department/create_department.html" />
-						<!-- Group: Add New -->
+						<!-- Gender: Add New -->
+						<cms:embed "gender/create_gender.html" />
+						<!-- Gender: Add New -->
 						<div class="gxcpl-ptop-20"></div>
 					</div>
 					<div class="col-md-9">
-						<!-- Group: List -->
+						<!-- Gender: List -->
 						<table class="gxcpl-card-shadow gxcpl-card-white">
 							<thead class="gxcpl-table-header">
 								<tr>
@@ -13,20 +13,19 @@
 										Sr. No.
 									</th>
 									<th width="*">
-										Department Name
+										Gender
 									</th>
 									<th width="30%">
 										Action
 									</th>
 								</tr>
 							</thead>
-
 							<tbody class="gxcpl-table-body">
 								<cms:pages masterpage=k_template_name paginate='1' limit='10' show_future_entries='1' >
 								<cms:no_results>
 								<tr>
 									<td colspan="3" class="text-center">
-										- No Departments Found -
+										- No Gender Found -
 									</td>
 								</tr>
 								</cms:no_results>
@@ -39,11 +38,11 @@
 									</td>
 									<td>
 										<div class="btn-group btn-group-xs" role="group" aria-label="...">
-											<button type="button" class="btn btn-warning gxcpl-btn gxcpl-fc-21" onclick="window.location='<cms:route_link "edit_department" rt_id=k_page_id />';">
+											<button type="button" class="btn btn-warning gxcpl-btn gxcpl-fc-21" onclick="window.location='<cms:route_link "edit_gender" rt_id=k_page_id />';">
 												<i class="fa fa-edit"></i><span class="hidden-sm hidden-xs"> EDIT</span>
 											</button>
 
-											<button type="button" class="btn btn-danger gxcpl-btn" onclick="window.location='<cms:route_link "delete_department" rt_id=k_page_id />';" >
+											<button type="button" class="btn btn-danger gxcpl-btn" onclick="window.location='<cms:route_link "delete_gender" rt_id=k_page_id />';" >
 												<i class="fa fa-trash"></i><span class="hidden-sm hidden-xs"> Delete</span>
 											</button>
 										</div>
@@ -61,25 +60,6 @@
 								</tr>
 							</tfoot>
 						</table>
-						<!-- Group: List -->
+						<!-- Gender: List -->
 						<div class="gxcpl-ptop-20"></div>
 					</div>
-
-					<!-- Modal -->
-					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-									<h4 class="modal-title" id="exampleModalLabel">New message</h4>
-								</div>
-								<div class="modal-body">
-									<cms:embed 'department/delete_department.html' />
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Modal -->

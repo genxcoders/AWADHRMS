@@ -19,8 +19,8 @@
  -->
 <cms:embed 'header.html' />
 		<!-- Content -->
+		<cms:match_route debug='0' />
 		<div class="gxcpl-content-div">
-			<cms:match_route debug='0' />
 
 			<div class="container-fluid">
 				<div class="row">
