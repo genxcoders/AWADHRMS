@@ -1,0 +1,9 @@
+<cms:if k_template_name=='department/department.php'>
+	<title><cms:get_custom_field 'page_title_department' masterpage='globals.php' /></title>
+<cms:else_if k_template_name=='gender/gender.php' />
+	<title><cms:get_custom_field 'page_title_gender' masterpage='globals.php' /></title>
+<cms:else_if k_template_name=='designation/designation.php' />
+	<title><cms:get_custom_field 'page_title_designation' masterpage='globals.php' /></title>
+<cms:else_if k_template_name=='settings/certifications.php' />
+	<title><cms:get_custom_field 'page_title_certification' masterpage='globals.php' /></title>
+</cms:if>

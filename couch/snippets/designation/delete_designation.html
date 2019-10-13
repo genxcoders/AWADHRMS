@@ -6,13 +6,13 @@
                             page_id=k_page_id
                             method='post' 
                             anchor='0'
-                            id='delete_department_form'
+                            id='delete_designation_form'
                         >
                             <cms:if k_success>
                                 <cms:db_delete_form />
                                 <cms:if k_success>
-                                    <cms:set_cookie 'submit_success_delete_department' value='Record deleted successfully.' expire='86400' />
-                                    <cms:redirect url="<cms:route_link 'list_department' />" /> 
+                                    <cms:set_cookie 'submit_success_delete_designation' value='Record deleted successfully.' expire='86400' />
+                                    <cms:redirect url="<cms:route_link 'list_designation' />" /> 
                                 </cms:if>
                             </cms:if>
     					
@@ -28,7 +28,7 @@
     								<div class="row">
                                         <div class="col-md-12">
                                             <div class="gxcpl-ptop-10"></div>
-                                            Are you sure you want to delete department <strong>"<cms:show k_page_title />"</strong>?
+                                            Are you sure you want to delete designation <strong>"<cms:show k_page_title />"</strong>?
                                             <div class="gxcpl-ptop-10"></div>
                                         </div>
                                     </div>
@@ -36,7 +36,7 @@
                                 <div class="gxcpl-card-footer text-center">
                                     <cms:input name='submit' type="submit" class="btn btn-danger gxcpl-btn btn-sm" value="DELETE" />
 
-                                    <button class="btn btn-default gxcpl-btn btn-sm" type="button" onclick="window.location.href='<cms:route_link "list_department" rt_id=k_page_id />';">
+                                    <button class="btn btn-default gxcpl-btn btn-sm" type="button" onclick="window.location.href='<cms:route_link "list_designation" rt_id=k_page_id />';">
                                         Cancel
                                     </button>
                                     

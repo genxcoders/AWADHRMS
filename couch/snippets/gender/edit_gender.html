@@ -6,7 +6,7 @@
 						        enctype='multipart/form-data'
 						        method='post'
 						        anchor='0'
-						        id='edit_department_form'
+						        id='edit_gender_form'
 						        >
 
 						        <cms:if k_success >
@@ -17,15 +17,15 @@
 						                k_page_name = "<cms:show k_page_title />"
 						            />
 						            <cms:if k_success >
-							            <cms:set_cookie 'submit_success_edit_department' value='Record edited successfully.' expire='86400' />
-							            <cms:redirect url="<cms:route_link 'list_department' />" />
+							            <cms:set_cookie 'submit_success_edit_gender' value='Record edited successfully.' expire='86400' />
+							            <cms:redirect url="<cms:route_link 'list_gender' />" />
 							        </cms:if>
 						        </cms:if>
 
 								<div class="gxcpl-card gxcpl-card-white gxcpl-card-shadow">
 									<div class="gxcpl-card-header">
 										<h5 class="gxcpl-no-margin">
-											Update Department
+											Update Gender
 										</h5>
 									</div>
 									<div class="gxcpl-card-body">
@@ -33,7 +33,7 @@
 										<div class="row">
 											<div class="col-md-12">
 												<label class="gxcpl-label">
-													Department Title
+													Gender Title
 												</label>
 											</div>
 											<div class="col-md-12">
@@ -46,7 +46,7 @@
 										<button class="btn btn-success gxcpl-btn btn-sm" type="submit">
 											<i class="fa fa-save"></i> Update
 										</button>
-										<button class="btn btn-default gxcpl-btn btn-sm" type="button" onclick="window.location.href='<cms:route_link 'list_department' />';">
+										<button class="btn btn-default gxcpl-btn btn-sm" type="button" onclick="window.location.href='<cms:route_link 'list_gender' />';">
 											<i class="fa fa-times"></i> Cancel
 										</button>
 									</div>
@@ -64,7 +64,7 @@
 											Sr. No.
 										</th>
 										<th width="*">
-											Department Name
+											Gender
 										</th>
 										<th width="30%">
 											Action
@@ -77,7 +77,7 @@
 									<cms:no_results>
 									<tr>
 										<td colspan="3" class="text-center">
-											- No Departments Found -
+											- No Gender Defined -
 										</td>
 									</tr>
 									</cms:no_results>
@@ -90,7 +90,7 @@
 										</td>
 										<td>
 											<div class="btn-group btn-group-xs" role="group" aria-label="...">
-												<button type="button" class="btn btn-warning gxcpl-btn gxcpl-fc-21" onclick="window.location='<cms:route_link "edit_department" rt_id=k_page_id />';">
+												<button type="button" class="btn btn-warning gxcpl-btn gxcpl-fc-21" onclick="window.location='<cms:route_link "edit_gender" rt_id=k_page_id />';">
 													<i class="fa fa-edit"></i> EDIT
 												</button>
 											</div>

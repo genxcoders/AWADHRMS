@@ -1,6 +1,6 @@
 					<div class="col-md-3">
 						<!-- Group: Add New -->
-						<cms:embed "department/create_department.html" />
+						<cms:embed "designation/create_designation.html" />
 						<!-- Group: Add New -->
 						<div class="gxcpl-ptop-20"></div>
 					</div>
@@ -13,7 +13,7 @@
 										Sr. No.
 									</th>
 									<th width="*">
-										Department Name
+										Designation
 									</th>
 									<th width="30%">
 										Action
@@ -26,7 +26,7 @@
 								<cms:no_results>
 								<tr>
 									<td colspan="3" class="text-center">
-										- No Departments Found -
+										- No Designation Found -
 									</td>
 								</tr>
 								</cms:no_results>
@@ -39,11 +39,11 @@
 									</td>
 									<td>
 										<div class="btn-group btn-group-xs" role="group" aria-label="...">
-											<button type="button" class="btn btn-warning gxcpl-btn gxcpl-fc-21" onclick="window.location='<cms:route_link "edit_department" rt_id=k_page_id />';">
+											<button type="button" class="btn btn-warning gxcpl-btn gxcpl-fc-21" onclick="window.location='<cms:route_link "edit_designation" rt_id=k_page_id />';">
 												<i class="fa fa-edit"></i><span class="hidden-sm hidden-xs"> EDIT</span>
 											</button>
 
-											<button type="button" class="btn btn-danger gxcpl-btn" onclick="window.location='<cms:route_link "delete_department" rt_id=k_page_id />';" >
+											<button type="button" class="btn btn-danger gxcpl-btn" onclick="window.location='<cms:route_link "delete_designation" rt_id=k_page_id />';" >
 												<i class="fa fa-trash"></i><span class="hidden-sm hidden-xs"> Delete</span>
 											</button>
 										</div>

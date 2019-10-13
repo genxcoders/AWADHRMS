@@ -1,11 +1,11 @@
 					<div class="col-md-3">
 						<!-- Group: Add New -->
-						<cms:embed "department/create_department.html" />
+						<cms:embed "settings/certifications/create_certifications.html" />
 						<!-- Group: Add New -->
 						<div class="gxcpl-ptop-20"></div>
 					</div>
 					<div class="col-md-9">
-						<!-- Group: List -->
+						<!-- Certification: List -->
 						<table class="gxcpl-card-shadow gxcpl-card-white">
 							<thead class="gxcpl-table-header">
 								<tr>
@@ -13,20 +13,22 @@
 										Sr. No.
 									</th>
 									<th width="*">
-										Department Name
+										Certificate Name
+									</th>
+									<th width="*" class="hidden-sm hidden-xs">
+										Certificate Number
 									</th>
 									<th width="30%">
 										Action
 									</th>
 								</tr>
 							</thead>
-
 							<tbody class="gxcpl-table-body">
 								<cms:pages masterpage=k_template_name paginate='1' limit='10' show_future_entries='1' >
 								<cms:no_results>
 								<tr>
-									<td colspan="3" class="text-center">
-										- No Departments Found -
+									<td colspan="4" class="text-center">
+										- No Certifications Found -
 									</td>
 								</tr>
 								</cms:no_results>
@@ -35,15 +37,24 @@
 										<cms:show k_absolute_count />.
 									</td>
 									<td>
-										<cms:show k_page_title />
+										<cms:show_securefile 'certificate_image' >
+    									<cms:if file_is_image >
+										<a class="example-image-link gxcpl-anchor" href="<cms:securefile_link file_id />" data-lightbox="<cms:show k_page_id />">
+											<img class="example-image gxcpl-list-thumbnail gxcpl-loading" style="object-fit: cover;" src="<cms:securefile_link file_id />" alt="<cms:show k_page_title />" />
+										</a>
+										</cms:if>
+										</cms:show_securefile> <cms:show k_page_title />
+									</td>
+									<td class="hidden-sm hidden-xs">
+										<cms:show certificate_number />
 									</td>
 									<td>
 										<div class="btn-group btn-group-xs" role="group" aria-label="...">
-											<button type="button" class="btn btn-warning gxcpl-btn gxcpl-fc-21" onclick="window.location='<cms:route_link "edit_department" rt_id=k_page_id />';">
+											<button type="button" class="btn btn-warning gxcpl-btn gxcpl-fc-21" onclick="window.location='<cms:route_link "edit_certifications" rt_id=k_page_id />';">
 												<i class="fa fa-edit"></i><span class="hidden-sm hidden-xs"> EDIT</span>
 											</button>
 
-											<button type="button" class="btn btn-danger gxcpl-btn" onclick="window.location='<cms:route_link "delete_department" rt_id=k_page_id />';" >
+											<button type="button" class="btn btn-danger gxcpl-btn" onclick="window.location='<cms:route_link "delete_certifications" rt_id=k_page_id />';" >
 												<i class="fa fa-trash"></i><span class="hidden-sm hidden-xs"> Delete</span>
 											</button>
 										</div>
@@ -53,7 +64,7 @@
 							</tbody>
 							<tfoot class="gxcpl-table-footer">
 								<tr>
-									<td colspan="3" class="text-center">
+									<td colspan="4" class="text-center">
 										<cms:pages masterpage=k_template_name show_future_entries="1" paginate='1' limit='10'>
 											<cms:paginator />
 										</cms:pages>
@@ -61,6 +72,6 @@
 								</tr>
 							</tfoot>
 						</table>
-						<!-- Group: List -->
+						<!-- Certification: List -->
 						<div class="gxcpl-ptop-20"></div>
 					</div>

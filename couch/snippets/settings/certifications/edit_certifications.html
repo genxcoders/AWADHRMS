@@ -1,0 +1,148 @@
+						<div class="col-md-3">						
+							<cms:form
+					        masterpage=k_template_name
+					        mode='edit'
+					        page_id=rt_id
+					        enctype='multipart/form-data'
+					        method='post'
+					        anchor='0'
+					        id='edit_certifications_form'
+					        >
+
+					        <cms:if k_success >
+					            <cms:db_persist_form
+					                _invalidate_cache='0'
+					                _auto_title='0'
+					                k_page_title = "<cms:show frm_k_page_title />"
+					                k_page_name = "<cms:show k_page_title />"
+					            />
+					            <cms:if k_success >
+						            <cms:set_cookie 'submit_success_edit_certifications' value='Record edited successfully.' expire='86400' />
+						            <cms:redirect url="<cms:route_link 'list_certifications' />" />
+						        </cms:if>
+					        </cms:if>
+
+							<div class="gxcpl-card gxcpl-card-white gxcpl-card-shadow">
+								<div class="gxcpl-card-header">
+									<h5 class="gxcpl-no-margin">
+										Edit Certification
+									</h5>
+								</div>
+								<div class="gxcpl-card-body">
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Certificate Name
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="k_page_title" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Certificate Number
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="certificate_number" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Certificate Image <br><small class="text-muted"><em>(Optional)</em></small>
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="certificate_image" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+								</div>
+								<div class="gxcpl-card-footer text-center">
+									<button class="btn btn-success gxcpl-btn btn-sm" type="submit">
+										<i class="fa fa-save"></i> Update
+									</button>
+									<button class="btn btn-default gxcpl-btn btn-sm" type="button" onclick="window.location.href='<cms:route_link 'list_certifications' />';">
+										<i class="fa fa-times"></i> Cancel
+									</button>
+								</div>
+							</div>
+
+						</cms:form>
+						</div>
+
+						<div class="col-md-9">
+							<!-- Certification: List -->
+						<table class="gxcpl-card-shadow gxcpl-card-white">
+							<thead class="gxcpl-table-header">
+								<tr>
+									<th width="65px">
+										Sr. No.
+									</th>
+									<th width="*">
+										Certificate Name
+									</th>
+									<th width="*">
+										Certificate Number
+									</th>
+									<th width="30%">
+										Action
+									</th>
+								</tr>
+							</thead>
+							<tbody class="gxcpl-table-body">
+								<cms:pages masterpage=k_template_name paginate='1' limit='10' show_future_entries='1' >
+								<cms:no_results>
+								<tr>
+									<td colspan="4" class="text-center">
+										- No Certifications Found -
+									</td>
+								</tr>
+								</cms:no_results>
+								<tr>
+									<td class="text-center">
+										<cms:show k_absolute_count />.
+									</td>
+									<td>
+										<cms:show_securefile 'certificate_image' >
+    									<cms:if file_is_image >
+										<a class="example-image-link gxcpl-anchor" href="<cms:securefile_link file_id />" data-lightbox="<cms:show k_page_id />">
+											<img class="example-image gxcpl-list-thumbnail gxcpl-loading" style="object-fit: cover;" src="<cms:securefile_link file_id />" alt="<cms:show k_page_title />" />
+										</a>
+										</cms:if>
+										</cms:show_securefile> <cms:show k_page_title />
+									</td>
+									<td>
+										<cms:show certificate_number />
+									</td>
+									<td>
+										<div class="btn-group btn-group-xs" role="group" aria-label="...">
+											<button type="button" class="btn btn-warning gxcpl-btn gxcpl-fc-21" onclick="window.location='<cms:route_link "edit_certifications" rt_id=k_page_id />';">
+												<i class="fa fa-edit"></i><span class="hidden-sm hidden-xs"> EDIT</span>
+											</button>
+										</div>
+									</td>
+								</tr>
+								</cms:pages>
+							</tbody>
+							<tfoot class="gxcpl-table-footer">
+								<tr>
+									<td colspan="4" class="text-center">
+										<cms:pages masterpage=k_template_name show_future_entries="1" paginate='1' limit='10'>
+											<cms:paginator />
+										</cms:pages>
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+						<!-- Certification: List -->
+						<div class="gxcpl-ptop-20"></div>
+						</div>
