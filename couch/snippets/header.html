@@ -16,6 +16,9 @@
 		<link rel="stylesheet" type="text/css" href="<cms:show k_site_link />assets/css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="<cms:show k_site_link />assets/css/lv-ripple.css" />
 		<link rel="stylesheet" type="text/css" href="<cms:show k_site_link />assets/css/gxcpl.css" />
+		<cms:if k_template_name=="department/department.php" || k_template_name=="gender/gender.php" || k_template_name=="designation/designation.php" || k_template_name=="settings/certifications.php" >
+		<link rel="stylesheet" type="text/css" href="<cms:show k_site_link />assets/DataTables/datatables.css"/>
+		</cms:if>
 		<cms:if k_template_name=="settings/certifications.php">
 		<link rel="stylesheet" type="text/css" href="<cms:show k_site_link />assets/css/lightbox.css" />
 		</cms:if>

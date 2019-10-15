@@ -376,8 +376,7 @@ $(document).ready(function(){
 			<div class="modal-content">
 				<cms:form
 			        masterpage='department/department.php'
-			       	mode='edit'
-		        	page_id='21'
+			       	mode='create'
 			        enctype='multipart/form-data'
 			        method='post'
 			        anchor='0'

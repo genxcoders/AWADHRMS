@@ -1,3 +1,5 @@
+<?php require_once( '../couch/cms.php' ); ?>
+<cms:template title='Registration' hidden='1' parent="_extusers_" />
 <!-- 
 	Company Name:	GenXCoders Pvt. Ltd.
 	Author Name:	Er Aashish Handa
@@ -6,61 +8,7 @@
 	Project Name:	AWADH
 	Project Type:	Restaurant Management System
  -->
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="description" content="GXCPL - Restaurant Management System">
-		<meta name="keywords" content="GenXCoders, Restaurant Management System, RMS, GXCPL, Nagpur, Best Restaurant Management System">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<title>Registration</title>
-		<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
-		<link rel="stylesheet" type="text/css" href="../assets/css/lv-ripple.css" />
-		<link rel="stylesheet" type="text/css" href="../assets/css/gxcpl.css" />
-		<link rel="stylesheet" type="text/css" href="../assets/css/lightbox.css" />
-	</head>
-	<body>
-
-		<!-- Site Content -->
-		<!-- Navbar -->
-		<div id="gxcpl" class="navbar navbar-default navbar-fixed-top gxcpl-navbar-shadow" role="navigation">
-		    <div class="container-fluid">
-		        <div class="navbar-header"><a class="navbar-brand" href="https://www.gxcpl.com/RMS">RMS</a>
-		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-		            </button>
-		        </div>
-		        <div class="collapse navbar-collapse navbar-menubuilder">
-		            <ul class="nav navbar-nav navbar-right">
-		                <li class="active">
-		                	<a href="/"><i class="fa fa-home fa-lg"></i></a>
-		                </li>
-		                <li class="dropdown">
-		                	<a href="/products" class="dropdown-toggle" data-toggle="dropdown">
-		                		Master Entry <b class="caret"></b>
-		                	</a>
-		                    <ul class="dropdown-menu" role="menu">
-		                        <li>
-		                        	<a href="department/department.html">Department</a>
-		                        </li>
-		                    </ul>
-		                </li>
-		                <li class="dropdown">
-		                	<a href="/products" class="dropdown-toggle" data-toggle="dropdown">
-		                		Products <b class="caret"></b>
-		                	</a>
-		                    <ul class="dropdown-menu" role="menu">
-		                        <li>
-		                        	<a href="/contact">Contact Us</a>
-		                        </li>
-		                    </ul>
-		                </li>
-		            </ul>
-		        </div>
-		    </div>
-		</div>
-		<!-- Navbar -->
-
+<cms:embed 'header.html' />
 		<!-- Content -->
 		<div class="gxcpl-content-div">
 			<div class="container-fluid">
@@ -73,6 +21,55 @@
 						<div class="gxcpl-ptop-10"></div>
 					</div>
 
+					<cms:form 
+		                masterpage=k_user_template 
+		                mode='create'
+		                enctype='multipart/form-data'
+		                method='post'
+		                anchor='0'
+		                id='create_user_form'
+	                >
+
+	                <cms:if k_success >        
+
+	                    <cms:check_spam email=frm_extended_user_email />            
+
+	                    <cms:db_persist_form 
+	                        _invalidate_cache='0'
+	                        k_page_title = "<cms:show frm_user_fname />_<cms:show frm_user_lname />"
+	                        k_page_name = "<cms:show frm_user_mobile />"
+	                    />                    
+
+	                    <cms:if k_success >
+	                        <cms:send_mail from="<cms:php>echo K_EMAIL_FROM;</cms:php>" to=frm_extended_user_email subject='New Account Confirmation' debug='1'>
+	                            Welcome!
+	                            <br>
+								Your username is: "<cms:show frm_extended_user_email /> or <cms:show frm_user_mobile />"<br>
+								Your password is: "<cms:show frm_extended_user_password />"<br>
+
+								If you have questions or if you need further information please do not hesitate to contact us at any time!<br>
+
+								Your Team
+								<cms:show k_site_link />
+	                        </cms:send_mail>                   
+	                        <cms:if k_success >                 
+	                        	<cms:set_cookie 'submit_success_create_gender' value='Employee added successfully.' expire='86400' />
+	                        	<cms:redirect k_page_link />
+	                        </cms:if>
+	                    </cms:if> 
+	                </cms:if>
+	                <cms:if k_error >
+	                	<div class="row">
+			                <cms:each k_error >
+				                <div class="col-md-6 text-center">
+									<div class="alert alert-danger gxcpl-shadow-1">
+										<cms:show item />
+									</div>
+									<div class="gxcpl-ptop-20"></div>
+								</div>
+							</cms:each>
+						</div>
+					</cms:if>
 					<div class="col-md-3">
 						<div class="gxcpl-card gxcpl-card-shadow gxcpl-card-white">
 							<div class="gxcpl-card-header">
@@ -81,6 +78,42 @@
 								</h4>
 							</div>
 							<div class="gxcpl-card-body">
+								<cms:if "<cms:not_empty "<cms:get_cookie 'submit_success_create_gender' />" />">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="alert alert-success alert-dismissible">
+												<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+												<strong><cms:get_cookie 'submit_success_create_gender' /></strong>
+											</div>
+										</div>
+									</div>
+									<cms:delete_cookie 'submit_success_create_gender' />
+								</cms:if>
+
+								<cms:if "<cms:not_empty "<cms:get_cookie 'submit_success_edit_gender' />" />">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="alert alert-success alert-dismissible">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <strong><cms:get_cookie 'submit_success_edit_gender' /></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <cms:delete_cookie 'submit_success_edit_gender' />
+                                </cms:if>
+
+								<cms:if "<cms:not_empty "<cms:get_cookie 'submit_success_delete_gender' />" />">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="alert alert-success alert-dismissible">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <strong><cms:get_cookie 'submit_success_delete_gender' /></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <cms:delete_cookie 'submit_success_delete_gender' />
+                                </cms:if>
+
 								<div class="row">
 									<div class="col-md-12 text-center">
 										<label class="gxcpl-label text-muted">
@@ -97,7 +130,7 @@
 										</label>
 									</div>
 									<div class="col-md-12">
-										<input class="gxcpl-input-text gxcpl-transition" type="file" name="emp_photo" />
+										<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="user_photo" />
 									</div>
 								</div>
 								<div class="gxcpl-ptop-10"></div>
@@ -107,14 +140,14 @@
 										<label class="gxcpl-label">
 											First Name
 										</label>
-										<input class="gxcpl-input-text gxcpl-transition" type="text" name="emp_fname" />
+										<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="user_fname" />
 									</div>
 								
 									<div class="col-md-6 col-sm-6 col-xs-6">
 										<label class="gxcpl-label">
 											Last Name
 										</label>
-										<input class="gxcpl-input-text gxcpl-transition" type="text" name="emp_lname" />
+										<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="user_lname" />
 									</div>
 								</div>
 								<div class="gxcpl-ptop-10"></div>
@@ -124,15 +157,13 @@
 										<label class="gxcpl-label">
 											Gender
 										</label>
-										<select class="gxcpl-input-text gxcpl-transition" type="text" name="emp_gender" >
-											<option id="-" value="-" selected disabled>Please Select</option>
-										</select>
+										<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="user_gender" />
 									</div>
 									<div class="col-md-6 col-sm-6 col-xs-6">
 										<label class="gxcpl-label">
 											Mobile Number
 										</label>
-										<input class="gxcpl-input-text gxcpl-transition" type="text" name="emp_mobile" />
+										<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="user_mobile" />
 									</div>
 								</div>
 								<div class="gxcpl-ptop-10"></div>
@@ -155,7 +186,7 @@
 										</label>
 									</div>
 									<div class="col-md-12">
-										<input class="gxcpl-input-text gxcpl-transition" type="file" name="emp_photo" />
+										<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="user_aadhaar" />
 									</div>
 								</div>
 								<div class="gxcpl-ptop-10"></div>
@@ -167,7 +198,7 @@
 										</label>
 									</div>
 									<div class="col-md-12">
-										<input class="gxcpl-input-text gxcpl-transition" type="file" name="emp_photo" />
+										<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="user_fingerprint" />
 									</div>
 								</div>
 								<div class="gxcpl-ptop-10"></div>
@@ -190,7 +221,7 @@
 										</label>
 									</div>
 									<div class="col-md-12">
-										<input class="gxcpl-input-text gxcpl-transition" type="text" name="emp_machine_id" />
+										<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="user_attendance_machine_id" />
 									</div>
 								</div>
 								<div class="gxcpl-ptop-10"></div>
@@ -200,18 +231,14 @@
 										<label class="gxcpl-label">
 											Department
 										</label>
-										<select class="gxcpl-input-text gxcpl-transition" type="text" name="emp_department" >
-											<option id="-" value="-" selected disabled>Please Select</option>
-										</select>
+										<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="user_department" />
 									</div>
 
 									<div class="col-md-6 col-sm-6 col-xs-6">
 										<label class="gxcpl-label">
 											Designation
 										</label>
-										<select class="gxcpl-input-text gxcpl-transition" type="text" name="emp_designation" >
-											<option id="-" value="-" selected disabled>Please Select</option>
-										</select>
+										<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="user_designation" />
 									</div>
 								</div>
 								<div class="gxcpl-ptop-10"></div>
@@ -221,16 +248,14 @@
 										<label class="gxcpl-label">
 											Reports To (Manager)
 										</label>
-										<select class="gxcpl-input-text gxcpl-transition" type="text" name="emp_manager" >
-											<option id="-" value="-" selected disabled>Please Select</option>
-										</select>
+										<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="user_manager" />
 									</div>
 									<div class="col-md-6 col-sm-6 col-xs-6">
 										<label class="gxcpl-label">
 											Employment Status
 										</label>
 										<br>	
-										<input type="checkbox" name="emp_status" /> Active
+										<cms:input type="bound" name="user_active_status" />
 									</div>
 								</div>
 								<div class="gxcpl-ptop-10"></div>
@@ -255,7 +280,7 @@
 									</div>
 
 									<div class="col-md-12">
-										<input class="gxcpl-input-text gxcpl-transition" type="text" name="emp_email" />
+										<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="extended_user_email" />
 									</div>
 								</div>
 								<div class="gxcpl-ptop-10"></div>
@@ -265,14 +290,14 @@
 										<label class="gxcpl-label">
 											Password
 										</label>
-										<input class="gxcpl-input-text gxcpl-transition" type="password" name="emp_password" />
+										<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="extended_user_password" />
 									</div>
 
 									<div class="col-md-6 col-sm-6 col-xs-6">
 										<label class="gxcpl-label">
 											Confirm Password
 										</label>
-										<input class="gxcpl-input-text gxcpl-transition" type="password" name="emp_repeat_password" />
+										<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="extended_user_password_repeat" />
 									</div>
 								</div>
 								<div class="gxcpl-ptop-10"></div>
@@ -280,14 +305,15 @@
 							</div>
 
 							<div class="gxcpl-card-footer text-center">
-								<button class="btn btn-default gxcpl-btn ripple">
-									<i class="fa fa-save"></i> SAVE
+								<button class="btn btn-success gxcpl-btn btn-sm" type="submit">
+									<i class="fa fa-save"></i> Save
 								</button>
 							</div>
 						</div>
 						<div class="gxcpl-ptop-30"></div>
 					</div>
 
+					</cms:form>
 					<div class="col-md-9">
 						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 							<div class="panel panel-default gxcpl-card-shadow">
@@ -563,28 +589,5 @@
 			</div>
 		</div>
 		<!-- Employee Detail Modals -->
-
-		<!-- Site Footer -->
-		<div class="gxcpl-ptop-30"></div>
-		<footer class="footer">
-			<div class="col-md-12">
-				&copy; AWADH | Powered by GXCPL
-			</div>
-		</footer>
-		<!-- Site Footer -->
-
-		<!-- Scripts -->
-		<script type="text/javascript" src="../assets/js/jquery-2.0.0.js"></script>
-		<script type="text/javascript" src="../assets/js/lightbox.js"></script>
-		<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
-		<script type="text/javascript" src="../assets/js/lv-ripple.jquery.js"></script>
-		<script type="text/javascript">
-			// Ripple
-			(function(exports){
-				$.ripple.init();
-			})(window);
-			// Ripple
-		</script>
-		<!-- Scripts -->
-	</body>
-</html>
+<cms:embed 'footer.html' />
+<?php COUCH::invoke(); ?>

@@ -1,0 +1,97 @@
+					<cms:pages masterpage=k_user_template>
+						<cms:show k_page_title />::<cms:show k_page_id />::<cms:show extended_user_id /><br>
+					</cms:pages>
+
+					<div class="col-md-3">
+						<!-- Gender: Add New -->
+						<cms:embed "users/create_employee.html" />
+						<!-- Gender: Add New -->
+						<div class="gxcpl-ptop-20"></div>
+					</div>
+					<div class="col-md-9">
+						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+							<div class="panel panel-default gxcpl-card-shadow">
+								<div class="panel-heading" role="tab" id="headingOne">
+									<strong>
+										<a class="gxcpl-anchor" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+											Department Name #1
+										</a>
+									</strong>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+									<div class="panel-body">
+										<div class="row">
+
+											<cms:pages masterpage=k_user_template >
+											<div class="col-md-2 col-sm-6 col-xs-6">
+												<div class="gxcpl-emp-card gxcpl-card-shadow">
+													<div class="gxcpl-emp-card-header">
+														<cms:if user_photo eq '1'>
+															<cms:show_securefile 'user_photo'>
+															<img class="gxcpl-emp-photo" src="<cms:securefile_link file_id />" />
+															</cms:show_securefile>
+														<cms:else />
+															<img class="gxcpl-emp-photo" src="<cms:show k_site_link />/assets/images/profile-image.jpg" />
+														</cms:if>
+														
+													</div>
+													<div class="gxcpl-emp-card-body">
+														<div class="gxcpl-emp-card-name text-center">
+															<cms:show k_page_title /><cms:show extended_user_id />
+														</div>
+													</div>
+													<div class="gxcpl-emp-card-footer text-center">
+														<div class="btn-group" role="group" aria-label="...">
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn" data-toggle="modal" data-target=".emp-details">
+																VIEW
+															</button>
+															<button type="button" class="btn btn-default btn-sm gxcpl-btn" onclick="window.location='<cms:show k_site_link/>users/profile.php';">
+																EDIT
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="gxcpl-ptop-10"></div>
+											</div>
+											</cms:pages>
+
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 
+							<div class="panel panel-default gxcpl-card-shadow">
+								<div class="panel-heading" role="tab" id="headingTwo">
+									<strong>
+										<a class="gxcpl-anchor" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+											Department Name #2
+										</a>
+									</strong>
+								</div>
+								<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+									<div class="panel-body">
+										<div class="row">
+											
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="panel panel-default gxcpl-card-shadow">
+								<div class="panel-heading" role="tab" id="headingThree">
+									<strong>
+										<a class="gxcpl-anchor" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+											Department Name #3
+										</a>
+									</strong>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+									<div class="panel-body">
+										<div class="row">
+											
+										</div>
+									</div>
+								</div>
+							</div> -->
+						</div>
+					</div>

@@ -16,6 +16,20 @@
 		</cms:if>
 		<script type="text/javascript" src="<cms:show k_site_link />assets/js/bootstrap.js"></script>
 		<script type="text/javascript" src="<cms:show k_site_link />assets/js/lv-ripple.jquery.js"></script>
+		<cms:if k_template_name=="department/department.php" || k_template_name=="gender/gender.php" || k_template_name=="designation/designation.php" || k_template_name=="settings/certifications.php">
+		<script type="text/javascript" src="<cms:show k_site_link />assets/DataTables/datatables.js"></script>
+		<script type="text/javascript">
+			// DateTable
+			$(document).ready(function() {
+			    $('#rmsdatatable').DataTable({
+			    	"paging":   true,
+			        "ordering": false,
+			        "info":     true
+			    });
+			} );
+			// DataTable
+		</script>
+		</cms:if>
 		<script type="text/javascript">
 			// Ripple
 			(function(exports){
@@ -36,6 +50,7 @@
 				$('[data-toggle="tooltip"]').tooltip()
 			})
 			// Tooltip
+
 		</script>
 		<!-- Scripts -->
 	</body>

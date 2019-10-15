@@ -1,0 +1,18 @@
+
+=======================[2019-10-15 21:02:30]=======================
+From: contact@yourdomain.com
+To: aashish@genxcoders.in
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Subject: New Account Confirmation
+Message: 	                            Welcome!
+	                            
+								Your username is: "aashish@genxcoders.in"
+								Your password is: "123456"
+
+								If you have questions or if you need further information please do not hesitate to contact us at any time!
+
+								Your Team
+								http://awadhrms.gxcpl/	                        
+
+Delivery Failed
