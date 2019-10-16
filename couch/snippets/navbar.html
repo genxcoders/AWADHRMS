@@ -1,3 +1,5 @@
+				<cms:if (k_template_name=='users/login.php') || (k_template_name=='users/lost-password.php')>
+				<cms:else />
 				<div class="collapse navbar-collapse navbar-menubuilder">
 		            <ul class="nav navbar-nav navbar-right">
 		                <li <cms:if k_template_name=='index.php'>class="active"</cms:if>>
@@ -44,5 +46,9 @@
 		                        </li>
 		                    </ul>
 		                </li>
+		                <li>
+		                	<a href="<cms:show k_logout_link />"><i class="fa fa-sign-out"></i> Logout</a>		                	
+		                </li>
 		            </ul>
 		        </div>
+		    	</cms:if>

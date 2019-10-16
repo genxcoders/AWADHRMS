@@ -36,7 +36,8 @@
 
 	                    <cms:db_persist_form 
 	                        _invalidate_cache='0'
-	                        k_page_title = "<cms:show frm_user_fname />_<cms:show frm_user_lname />"
+	                        _auto_title='0'
+	                        k_page_title = "<cms:show frm_user_fname /> <cms:show frm_user_lname />"
 	                        k_page_name = "<cms:show frm_user_mobile />"
 	                    />                    
 

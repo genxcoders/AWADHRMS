@@ -54,6 +54,7 @@
 				</div>
 				<div class="gxcpl-card-body">
 					
+					<cms:ignore>
 					<div class="row">
 						<div class="col-md-12">
 							<label class="gxcpl-label">
@@ -71,10 +72,11 @@
 								<option id="owner">Captain</option>
 								<option id="owner">Waiter</option> -->
 							</select>
-						</div>
+						</div>						
 					</div>
 					
 					<div class="gxcpl-ptop-10"></div>
+					</cms:ignore>
 
 					<div class="row">
 						<div class="col-md-12">
