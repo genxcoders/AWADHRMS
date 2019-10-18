@@ -351,7 +351,7 @@ img.gxcpl-list-thumbnail {
 .gxcpl-emp-card {
 	border:1px solid rgba(0,0,0,0.1); 
 	width: 100%; 
-	height: 180px; 
+	height: 190px; 
 	border-radius: 4px; 
 	background-color: rgba(0,0,0,0.05);
 }
@@ -377,12 +377,12 @@ img.gxcpl-list-thumbnail {
 }
 .gxcpl-emp-card-body {
 	width: 100%;
-	height: 50px;
+	height: 60px;
 }
 .gxcpl-emp-card-body > .gxcpl-emp-card-name {
 	width: 100%;
-	height: 50px;
-	line-height: 20px;
+	height: 60px;
+	line-height: normal;
 	font-size: 14px;
 	text-transform: uppercase;
 	padding: 5px 10px;
@@ -435,6 +435,10 @@ h2.gxcpl-emp-status-active {
 }
 h2.gxcpl-emp-status-inactive {
 	color: #c0392b;
+}
+small.gxcpl-smaller {
+	font-size: 10px;
+	letter-spacing: 0.1px;
 }
 /* Employee Card */
 

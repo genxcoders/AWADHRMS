@@ -37,6 +37,7 @@
 			})(window);
 			// Ripple
 
+			<cms:if "<cms:not k_matched_route=='edit_employee' />">
 			// Auto Close Alert
 			window.setTimeout(function() {
 			    $(".alert").fadeTo(500, 0).slideUp(500, function(){
@@ -44,6 +45,7 @@
 			    });
 			}, 4000);
 			// Auto Close Alert
+			</cms:if>
 
 			// Tooltip
 			$(function () {

@@ -2,7 +2,6 @@
 <cms:template title='Dashboard'>
 
 </cms:template>
-<cms:set usertype="<cms:pages masterpage='users/index.php' id=k_user_id><cms:related_pages 'user_designation'><cms:show k_page_title /></cms:related_pages></cms:pages>" scope='global' />
 <!-- 
 	Company Name:	GenXCoders Pvt. Ltd.
 	Author Name:	Er Aashish Handa

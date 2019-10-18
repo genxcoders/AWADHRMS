@@ -1,6 +1,6 @@
 <?php require_once( '../couch/cms.php' ); ?>
 
-<cms:template clonable='1' title='Users' hidden='1' parent="_extusers_">
+<cms:template clonable='1' title='Users' routable='1' hidden='1' parent="_extusers_">
     <!-- 
         If additional fields are required for users, they can be defined here in the usual manner.
     -->        
@@ -35,13 +35,13 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h4 class="gxcpl-no-margin gxcpl-no-padding">
-							Master Entry: Employee
+							Master Entry: Employee (<cms:show usertype />)
 						</h4>
 						<hr class="style7" />
 						<div class="gxcpl-ptop-10"></div>
 					</div>
 					
-					<cms:embed "users/list_employee.html" />
+					<cms:embed "users/<cms:show k_matched_route />.html" />
 
 				</div>
 			</div>	

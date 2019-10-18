@@ -4,6 +4,7 @@
 	    <cms:redirect "<cms:login_link />" />
 	</cms:if>
 </cms:if>
+<cms:set usertype="<cms:pages masterpage='users/index.php' id=k_user_id><cms:related_pages 'user_designation'><cms:show k_page_title /></cms:related_pages></cms:pages>" scope='global' />
 <!DOCTYPE html>
 <html>
 	<head>
