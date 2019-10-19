@@ -6,32 +6,28 @@
 		                	<a href="<cms:show k_site_link />"><i class="fa fa-home fa-lg"></i></a>
 		                </li>
 		                <cms:if k_user_access_level gt '4'>
-		                <li class="dropdown <cms:if k_template_name=='department/department.php' || k_template_name=='gender/gender.php' || k_template_name=='designation/designation.php' || k_template_name=='users/register-emp.php'>active</cms:if>">
+		                <li class="dropdown <cms:if k_template_name=='department/department.php' || k_template_name=='gender/gender.php' || k_template_name=='designation/designation.php' || k_template_name=='users/index.php' || k_template_name=='settings/certifications.php' || k_template_name=='settings/restaurant.php'>active</cms:if>">
 		                	<a href="#!" class="dropdown-toggle" data-toggle="dropdown">
 		                		Master Entry <b class="caret"></b>
 		                	</a>
 		                    <ul class="dropdown-menu" role="menu">
 		                        <li <cms:if k_template_name=='gender/gender.php'>class="active"</cms:if> >
-		                        	<a href="<cms:show k_site_link />gender/gender.php">Gender</a>
+		                        	<a href="<cms:show k_site_link />gender/gender.php">Gender Management</a>
 		                        </li>
 		                        <li <cms:if k_template_name=='department/department.php'>class="active"</cms:if> >
-		                        	<a href="<cms:show k_site_link />department/department.php">Department</a>
+		                        	<a href="<cms:show k_site_link />department/department.php">Department Management</a>
 		                        </li>
 		                        <li <cms:if k_template_name=='designation/designation.php'>class="active"</cms:if> >
-		                        	<a href="<cms:show k_site_link />designation/designation.php">Designation</a>
+		                        	<a href="<cms:show k_site_link />designation/designation.php">Designation Management</a>
 		                        </li>
-		                        <li <cms:if k_template_name=='users/register-emp.php'>class="active"</cms:if> >
-		                        	<a href="<cms:show k_site_link />users/register-emp.php">Add New Employee</a>
+		                        <li <cms:if k_template_name=='users/index.php'>class="active"</cms:if> >
+		                        	<a href="<cms:route_link 'list_employee' masterpage='users/index.php' />">Employee Management</a>
 		                        </li>
-		                    </ul>
-		                </li>
-		                <li class="dropdown <cms:if k_template_name=='settings/certifications.php'>active</cms:if>">
-		                	<a href="#!" class="dropdown-toggle" data-toggle="dropdown">
-		                		Master Setting <b class="caret"></b>
-		                	</a>
-		                    <ul class="dropdown-menu" role="menu">
 		                        <li <cms:if k_template_name=='settings/certifications.php'>class="active"</cms:if> >
-		                        	<a href="<cms:show k_site_link />settings/certifications.php">Certifications</a>
+		                        	<a href="<cms:show k_site_link />settings/certifications.php">Certification Management</a>
+		                        </li>
+		                        <li <cms:if k_template_name=='settings/restaurant.php'>class="active"</cms:if> >
+		                        	<a href="<cms:show k_site_link />settings/certifications.php">Certification Management</a>
 		                        </li>
 		                    </ul>
 		                </li>

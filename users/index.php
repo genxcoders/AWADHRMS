@@ -22,6 +22,9 @@
     <cms:route name='edit_employee' path='{:id}/edit' >
     	<cms:route_validators id='non_zero_integer' />
 	</cms:route>
+	<cms:route name='view_employee' path='{:id}/view' >
+    	<cms:route_validators id='non_zero_integer' />
+	</cms:route>
 	<cms:route name='delete_employee' path='{:id}/delete' >
 	    <cms:route_validators id='non_zero_integer' />
 	</cms:route>
@@ -35,7 +38,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h4 class="gxcpl-no-margin gxcpl-no-padding">
-							Master Entry: Employee (<cms:show usertype />)
+							Master Entry: Employee
 						</h4>
 						<hr class="style7" />
 						<div class="gxcpl-ptop-10"></div>

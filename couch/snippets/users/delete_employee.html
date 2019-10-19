@@ -11,8 +11,8 @@
                             <cms:if k_success>
                                 <cms:db_delete_form />
                                 <cms:if k_success>
-                                    <cms:set_cookie 'submit_success_delete_gender' value='Record deleted successfully.' expire='86400' />
-                                    <cms:redirect url="<cms:route_link 'list_gender' />" /> 
+                                    <cms:set_cookie 'submit_success_delete_emp' value='Record deleted successfully.' expire='86400' />
+                                    <cms:redirect url="<cms:route_link 'list_employee' />" /> 
                                 </cms:if>
                             </cms:if>
                         

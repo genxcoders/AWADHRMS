@@ -11,7 +11,7 @@
 
 		<!-- Scripts -->
 		<script type="text/javascript" src="<cms:show k_site_link />assets/js/jquery-2.0.0.js"></script>
-		<cms:if k_template_name=="settings/certifications.php">
+		<cms:if k_template_name=="settings/certifications.php" || k_template_name=="users/index.php">
 		<script type="text/javascript" src="<cms:show k_site_link />assets/js/lightbox.js"></script>
 		</cms:if>
 		<script type="text/javascript" src="<cms:show k_site_link />assets/js/bootstrap.js"></script>
@@ -52,6 +52,29 @@
 				$('[data-toggle="tooltip"]').tooltip()
 			})
 			// Tooltip
+
+			<cms:if k_template_name=='users/index.php'>
+			// User List Accordion
+			$(document).ready(function(){
+				var $panels = $('.panel-collapse');
+				$panels.on('show.bs.collapse', function(){
+					$panels.not(this).collapse('hide');
+				});
+			});
+			// User List Accordion
+			</cms:if>
+
+			// Employee Modal
+			function openModal() {
+				$(document).on("click", ".emp-details", function () {
+					var empid = $(this).data('id');
+					document.getElementsByTagName("cms:pages")[0].setAttribute("id", empid);
+					// As pointed out in comments, 
+					// it is unnecessary to have to manually call the modal.
+					// $('#addBookDialog').modal('show');
+				});
+			}
+			// Employee Modal
 
 		</script>
 		<!-- Scripts -->

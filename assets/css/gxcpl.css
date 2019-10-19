@@ -440,6 +440,9 @@ small.gxcpl-smaller {
 	font-size: 10px;
 	letter-spacing: 0.1px;
 }
+.panel-heading {
+	cursor: pointer;
+}
 /* Employee Card */
 
 /* Paginator */
