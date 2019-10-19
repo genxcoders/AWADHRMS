@@ -270,6 +270,9 @@ label.gxcpl-label {
 	background-color: #ffc107;
 	font-weight: 500;
 }
+.dropdown-menu .divider {
+	margin: 0px;
+}
 /* Navbar */
 
 /* Site Content */
