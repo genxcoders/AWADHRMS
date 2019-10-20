@@ -45,8 +45,8 @@
 													</div>
 													<div class="gxcpl-emp-card-footer text-center">
 														<div class="gxcpl-ptop-5"></div>
-														<span data-toggle="modal" data-target=".emp-details">
-															<button type="button" class="btn btn-default btn-xs gxcpl-btn" data-toggle="tooltip" data-placement="top" data-id="<cms:show k_page_id />" title="View" onclick="openModal()">
+														<span data-toggle="modal" data-target=".emp-details" data-backdrop="static" data-keyboard="false">
+															<button id="view-emp" type="button" class="btn btn-default btn-xs gxcpl-btn" data-toggle="tooltip" data-placement="top" data-id="<cms:show k_page_id />" title="View" >
 																<i class="fa fa-eye"></i>
 															</button>
 														</span>
@@ -74,6 +74,8 @@
 					</div>
 
 					<!-- Employee Detail Modals -->
+					<div class="modal fade emp-details" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"></div>
+					<cms:ignore>
 					<div class="modal fade emp-details" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 						<div class="modal-dialog modal-lg" role="document">
 							<div class="modal-content">
@@ -86,4 +88,5 @@
 							</div>
 						</div>
 					</div>
+					</cms:ignore>
 					<!-- Employee Detail Modals -->

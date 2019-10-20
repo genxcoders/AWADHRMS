@@ -65,15 +65,36 @@
 			</cms:if>
 
 			// Employee Modal
-			function openModal() {
-				$(document).on("click", ".emp-details", function () {
-					var empid = $(this).data('id');
-					document.getElementsByTagName("cms:pages")[0].setAttribute("id", empid);
-					// As pointed out in comments, 
-					// it is unnecessary to have to manually call the modal.
-					// $('#addBookDialog').modal('show');
-				});
-			}
+			// function openModal() {
+			// 	$(document).on("click", ".emp-details", function () {
+			// 		var empid = $(this).data('id');
+			// 		//document.getElementsByTagName("cms:pages")[0].setAttribute("id", empid);
+			// 		alert(empid);
+			// 	});
+			// }
+			// $('.btn').click(function() {
+			// 	var d = $(this).data('id');      
+			// 	alert(d);   
+			// });
+			$("button#view-emp").click(function(e) {
+				var empid = $(this).data('id');
+			    e.preventDefault();
+			    $.ajax({
+			        type: "GET",
+			        url: "<cms:show k_site_link />users/view-users-modal.php",
+			       	data: {empid:empid},
+			        success: function(result) {
+			            // alert('ok'+result);
+			            // setTimeout(function() {
+						//     $(".emp-details").modal('show').html(result);
+						// }, 2000);
+			            $(".emp-details").modal('show').html(result);
+			        },
+			        error: function(result) {
+			            alert('error');
+			        }
+			    });
+			});
 			// Employee Modal
 
 		</script>

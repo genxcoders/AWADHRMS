@@ -1,5 +1,6 @@
-								<cms:pages masterapge=k_template_name id=rt_id show_future_entries='1' >
-								<cms:show k_page_id />-<cms:show id />
+								<cms:set empid="<cms:gpc 'id' method='get' />" scope='global' />
+								<cms:pages masterpage=k_user_template id=id show_future_entries='1' limit='1' >
+								<cms:show k_page_id />-<cms:show id />-<cms:show empid />
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 									<h4 class="modal-title" id="myModalLabel"><cms:show user_fname /> <cms:show user_lname /></h4>
