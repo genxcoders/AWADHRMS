@@ -11,12 +11,12 @@
 
 		<!-- Scripts -->
 		<script type="text/javascript" src="<cms:show k_site_link />assets/js/jquery-2.0.0.js"></script>
-		<cms:if k_template_name=="settings/certifications.php" || k_template_name=="users/index.php">
+		<cms:if k_template_name=="settings/certifications.php" || k_template_name=="users/index.php" || k_template_name=="settings/restaurant.php">
 		<script type="text/javascript" src="<cms:show k_site_link />assets/js/lightbox.js"></script>
 		</cms:if>
 		<script type="text/javascript" src="<cms:show k_site_link />assets/js/bootstrap.js"></script>
 		<script type="text/javascript" src="<cms:show k_site_link />assets/js/lv-ripple.jquery.js"></script>
-		<cms:if k_template_name=="department/department.php" || k_template_name=="gender/gender.php" || k_template_name=="designation/designation.php" || k_template_name=="settings/certifications.php">
+		<cms:if k_template_name=="department/department.php" || k_template_name=="gender/gender.php" || k_template_name=="designation/designation.php" || k_template_name=="settings/restaurant.php">
 		<script type="text/javascript" src="<cms:show k_site_link />assets/DataTables/datatables.js"></script>
 		<script type="text/javascript">
 			// DateTable
@@ -65,17 +65,6 @@
 			</cms:if>
 
 			// Employee Modal
-			// function openModal() {
-			// 	$(document).on("click", ".emp-details", function () {
-			// 		var empid = $(this).data('id');
-			// 		//document.getElementsByTagName("cms:pages")[0].setAttribute("id", empid);
-			// 		alert(empid);
-			// 	});
-			// }
-			// $('.btn').click(function() {
-			// 	var d = $(this).data('id');      
-			// 	alert(d);   
-			// });
 			$("button#view-emp").click(function(e) {
 				var empid = $(this).data('id');
 			    e.preventDefault();
@@ -84,10 +73,6 @@
 			        url: "<cms:show k_site_link />users/view-users-modal.php",
 			       	data: {empid:empid},
 			        success: function(result) {
-			            // alert('ok'+result);
-			            // setTimeout(function() {
-						//     $(".emp-details").modal('show').html(result);
-						// }, 2000);
 			            $(".emp-details").modal('show').html(result);
 			        },
 			        error: function(result) {

@@ -1,0 +1,181 @@
+						
+						<cms:form
+					        masterpage='settings/restaurant.php'
+					        mode='create'
+					        enctype='multipart/form-data'
+					        method='post'
+					        anchor='0'
+					        id='create_restaurant_form'
+					        >
+
+					        <cms:if k_success >
+					            <cms:db_persist_form
+					                _invalidate_cache='0'
+					                _auto_title='0'
+					                k_page_title = "<cms:show frm_k_page_title />"
+					                k_page_name = "<cms:show k_page_title />"
+					            />
+					            <cms:if k_success >
+						            <cms:set_cookie 'submit_success_create_restaurant' value='Record added successfully.' expire='86400' />
+						            <cms:redirect url="<cms:route_link 'list_restaurant' />" />
+						        </cms:if>
+					        </cms:if>
+
+							<div class="gxcpl-card gxcpl-card-white gxcpl-card-shadow">
+								<div class="gxcpl-card-header">
+									<h5 class="gxcpl-no-margin">
+										Add New Restaurant
+									</h5>
+								</div>
+								<div class="gxcpl-card-body">
+									
+					        		<cms:if "<cms:not_empty "<cms:get_cookie 'submit_success_create_restaurant' />" />">
+										<div class="row">
+											<div class="col-md-12">
+												<div class="alert alert-success alert-dismissible">
+													<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+													<strong><cms:get_cookie 'submit_success_create_restaurant' /></strong>
+												</div>
+											</div>
+										</div>
+										<cms:delete_cookie 'submit_success_create_restaurant' />
+									</cms:if>
+
+									<cms:if "<cms:not_empty "<cms:get_cookie 'submit_success_edit_restaurant' />" />">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="alert alert-success alert-dismissible">
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <strong><cms:get_cookie 'submit_success_edit_restaurant' /></strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <cms:delete_cookie 'submit_success_edit_restaurant' />
+                                    </cms:if>
+
+									<cms:if "<cms:not_empty "<cms:get_cookie 'submit_success_delete_restaurant' />" />">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="alert alert-success alert-dismissible">
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <strong><cms:get_cookie 'submit_success_delete_restaurant' /></strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <cms:delete_cookie 'submit_success_delete_restaurant' />
+                                    </cms:if>
+									
+									<cms:if k_error >
+										<div class="row">
+											<div class="col-md-12">
+												<div class="alert alert-danger alert-dismissible">
+													<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+													<cms:each k_error >
+									                    <cms:show item /><br>
+									                </cms:each>
+												</div>
+											</div>
+										</div>
+									</cms:if>
+
+									<!-- <div class="gxcpl-ptop-20"></div> -->
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Restaurant Logo
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="business_logo" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Restaurant Name
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="k_page_title" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Restaurant Mobile
+												<br>
+												<small class="text-muted"><em>Use "," (comma) to separate numbers</em></small>
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="business_mobile" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Restaurant Landline
+												<br>
+												<small class="text-muted"><em>Use "," (comma) to separate numbers</em></small>
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="business_landline" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Restaurant Email Id
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="business_emailid" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Restaurant Address
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="business_address" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Business Website URL
+												<br>
+												<small class="text-muted"><em>do not use http:// or https://</em></small>
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="business_website" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="gxcpl-ptop-20"></div>
+								</div>
+								<div class="gxcpl-card-footer text-center">
+									<button class="btn btn-success gxcpl-btn btn-sm" type="submit">
+										<i class="fa fa-save"></i> Save
+									</button>
+								</div>
+							</div>
+
+						</cms:form>

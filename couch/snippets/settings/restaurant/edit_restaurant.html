@@ -1,0 +1,236 @@
+					<div class="col-md-3">
+						<cms:form
+					        masterpage='settings/restaurant.php'
+					        mode='edit'
+					        page_id=rt_id
+					        enctype='multipart/form-data'
+					        method='post'
+					        anchor='0'
+					        id='edit_restaurant_form'
+				        >
+
+					        <cms:if k_success >
+					            <cms:db_persist_form
+					                _invalidate_cache='0'
+					                _auto_title='0'
+					                k_page_title = "<cms:show frm_k_page_title />"
+					                k_page_name = "<cms:show k_page_title />"
+					            />
+					            <cms:if k_success >
+						            <cms:set_cookie 'submit_success_create_restaurant' value='Record updated successfully.' expire='86400' />
+						            <cms:redirect url="<cms:route_link 'list_restaurant' />" />
+						        </cms:if>
+					        </cms:if>
+
+							<div class="gxcpl-card gxcpl-card-white gxcpl-card-shadow">
+								<div class="gxcpl-card-header">
+									<h5 class="gxcpl-no-margin">
+										Update Restaurant
+									</h5>
+								</div>
+								<div class="gxcpl-card-body">
+
+									<cms:if "<cms:not_empty "<cms:get_cookie 'submit_success_edit_restaurant' />" />">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="alert alert-success alert-dismissible">
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <strong><cms:get_cookie 'submit_success_edit_restaurant' /></strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <cms:delete_cookie 'submit_success_edit_restaurant' />
+                                    </cms:if>
+									
+									<cms:if k_error >
+										<div class="row">
+											<div class="col-md-12">
+												<div class="alert alert-danger alert-dismissible">
+													<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+													<cms:each k_error >
+									                    <cms:show item /><br>
+									                </cms:each>
+												</div>
+											</div>
+										</div>
+									</cms:if>
+
+									<!-- <div class="gxcpl-ptop-20"></div> -->
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Restaurant Logo
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="business_logo" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Restaurant Name
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="k_page_title" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Restaurant Mobile
+												<br>
+												<small class="text-muted"><em>Use "," (comma) to separate numbers</em></small>
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="business_mobile" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Restaurant Landline
+												<br>
+												<small class="text-muted"><em>Use "," (comma) to separate numbers</em></small>
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="business_landline" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Restaurant Email Id
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="business_emailid" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Restaurant Address
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="business_address" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="row">
+										<div class="col-md-12">
+											<label class="gxcpl-label">
+												Business Website URL
+												<br>
+												<small class="text-muted"><em>do not use http:// or https://</em></small>
+											</label>
+										</div>
+										<div class="col-md-12">
+											<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="business_website" />
+										</div>
+									</div>
+									<div class="gxcpl-ptop-10"></div>
+
+									<div class="gxcpl-ptop-20"></div>
+								</div>
+								<div class="gxcpl-card-footer text-center">
+									<button class="btn btn-success gxcpl-btn btn-sm" type="submit">
+										<i class="fa fa-save"></i> Update
+									</button>
+									<button class="btn btn-default gxcpl-btn btn-sm" type="button" onclick="window.location.href='<cms:route_link 'list_restaurant' />';">
+										<i class="fa fa-times"></i> Cancel
+									</button>
+								</div>
+							</div>
+
+						</cms:form>
+					</div>
+
+					<div class="col-md-9">
+						<!-- restaurant: List -->
+						<table class="gxcpl-card-shadow gxcpl-card-white display" id="rmsdatatable">
+							<thead class="gxcpl-table-header">
+								<tr>
+									<th width="65px">
+										Sr. No.
+									</th>
+									<th width="*">
+										Restaurant Name
+									</th>
+									<th width="*">
+										Contact Number
+									</th>
+									<th width="30%">
+										Action
+									</th>
+								</tr>
+							</thead>
+							<tbody class="gxcpl-table-body">
+								<cms:pages masterpage=k_template_name paginate='1' limit='10' show_future_entries='1' >
+								<cms:no_results>
+								<tr>
+									<td colspan="4" class="text-center">
+										- No Restaurant Found -
+									</td>
+								</tr>
+								</cms:no_results>
+								<tr>
+									<td class="text-center">
+										<cms:show k_absolute_count />.
+									</td>
+									<td>
+										<cms:if business_logo eq '1'>
+											<cms:show_securefile 'business_logo'>
+											<a class="example-image-link gxcpl-anchor" href="<cms:securefile_link file_id />" data-lightbox="example-<cms:show k_user_id />">
+												<img class="example-image gxcpl-list-thumbnail" src="<cms:securefile_link file_id />" alt="<cms:show k_page_title />" />
+											</a>
+											</cms:show_securefile>
+										<cms:else />
+											<img class="example-image gxcpl-list-thumbnail" src="<cms:show k_site_link />/assets/images/no-image-32x32.jpg" />
+										</cms:if> <cms:show k_page_title />
+									</td>
+									<td>
+										<cms:if business_mobile>
+										<cms:each business_mobile sep=",">
+											+91-<cms:show item /><br>
+										</cms:each>
+										</cms:if>
+										<cms:if business_landline>
+										<br>
+										<cms:each business_landline sep=",">
+											+91-<cms:show item /><br>
+										</cms:each>
+										</cms:if>
+										<cms:if "<cms:not business_mobile />" && "<cms:not business_landline />">
+											- NA -
+										</cms:if>
+									</td>
+									<td>
+										<div class="btn-group btn-group-xs" role="group" aria-label="...">
+											<button type="button" class="btn btn-warning gxcpl-btn gxcpl-fc-21" onclick="window.location='<cms:route_link "edit_restaurant" rt_id=k_page_id />';">
+												<i class="fa fa-edit"></i><span class="hidden-sm hidden-xs"> EDIT</span>
+											</button>
+										</div>
+									</td>
+								</tr>
+								</cms:pages>
+							</tbody>
+						</table>
+						<!-- restaurant: List -->
+						<div class="gxcpl-ptop-20"></div>
+					</div>

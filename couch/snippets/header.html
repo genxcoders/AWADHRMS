@@ -5,6 +5,7 @@
 	</cms:if>
 </cms:if>
 <cms:set usertype="<cms:pages masterpage='users/index.php' id=k_user_id><cms:related_pages 'user_designation'><cms:show k_page_title /></cms:related_pages></cms:pages>" scope='global' />
+<cms:set work_location="<cms:pages masterpage='users/index.php' id=k_user_id><cms:related_pages 'user_location'><cms:show k_page_title /></cms:related_pages></cms:pages>" scope='global' />
 <!DOCTYPE html>
 <html>
 	<head>
@@ -17,10 +18,10 @@
 		<link rel="stylesheet" type="text/css" href="<cms:show k_site_link />assets/css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="<cms:show k_site_link />assets/css/lv-ripple.css" />
 		<link rel="stylesheet" type="text/css" href="<cms:show k_site_link />assets/css/gxcpl.css" />
-		<cms:if k_template_name=="department/department.php" || k_template_name=="gender/gender.php" || k_template_name=="designation/designation.php" || k_template_name=="settings/certifications.php" >
+		<cms:if k_template_name=="department/department.php" || k_template_name=="gender/gender.php" || k_template_name=="designation/designation.php" || k_template_name=="settings/certifications.php" || k_template_name=="settings/restaurant.php">
 		<link rel="stylesheet" type="text/css" href="<cms:show k_site_link />assets/DataTables/datatables.css"/>
 		</cms:if>
-		<cms:if k_template_name=="settings/certifications.php" || k_template_name=="users/index.php" >
+		<cms:if k_template_name=="settings/certifications.php" || k_template_name=="users/index.php" || k_template_name=="settings/restaurant.php" >
 		<link rel="stylesheet" type="text/css" href="<cms:show k_site_link />assets/css/lightbox.css" />
 		</cms:if>
 	</head>
@@ -38,3 +39,19 @@
 		    </div>
 		</div>
 		<!-- Navbar -->
+
+		<!-- Remove at time of delivery -->
+		<div class="gxcpl-ptop-50"></div>
+		<div class="gxcpl-ptop-50"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="jumbotron">
+						<cms:show usertype />
+						<br>
+						<cms:show work_location />
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Remove at time of delivery -->

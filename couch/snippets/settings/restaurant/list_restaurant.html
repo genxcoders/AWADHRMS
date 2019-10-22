@@ -1,0 +1,83 @@
+					<div class="col-md-3">
+						<!-- restaurant: Add New -->
+						<cms:embed "settings/restaurant/create_restaurant.html" />
+						<!-- restaurant: Add New -->
+						<div class="gxcpl-ptop-20"></div>
+					</div>
+					<div class="col-md-9">
+						<!-- restaurant: List -->
+						<table class="gxcpl-card-shadow gxcpl-card-white display" id="rmsdatatable">
+							<thead class="gxcpl-table-header">
+								<tr>
+									<th width="65px">
+										Sr. No.
+									</th>
+									<th width="*">
+										Restaurant Name
+									</th>
+									<th width="*">
+										Contact Number
+									</th>
+									<th width="30%">
+										Action
+									</th>
+								</tr>
+							</thead>
+							<tbody class="gxcpl-table-body">
+								<cms:pages masterpage=k_template_name paginate='1' limit='10' show_future_entries='1' >
+								<cms:no_results>
+								<tr>
+									<td colspan="4" class="text-center">
+										- No Restaurant Found -
+									</td>
+								</tr>
+								</cms:no_results>
+								<tr>
+									<td class="text-center">
+										<cms:show k_absolute_count />.
+									</td>
+									<td>
+										<cms:if business_logo eq '1'>
+											<cms:show_securefile 'business_logo'>
+											<a class="example-image-link gxcpl-anchor" href="<cms:securefile_link file_id />" data-lightbox="example-<cms:show k_user_id />">
+												<img class="example-image gxcpl-list-thumbnail" src="<cms:securefile_link file_id />" alt="<cms:show k_page_title />" />
+											</a>
+											</cms:show_securefile>
+										<cms:else />
+											<img class="example-image gxcpl-list-thumbnail" src="<cms:show k_site_link />/assets/images/no-image-32x32.jpg" />
+										</cms:if> <cms:show k_page_title />
+									</td>
+									<td style="line-height: 20px;">
+										<cms:if business_mobile>
+										<cms:each business_mobile sep=",">
+											+91-<cms:show item /><cms:if "<cms:not k_last_item />">, </cms:if>
+										</cms:each>
+										</cms:if>
+										<cms:if business_landline>
+										<br>
+										<cms:each business_landline sep=",">
+											+91-<cms:show item /><cms:if "<cms:not k_last_item />">, </cms:if> 
+										</cms:each>
+										</cms:if>
+										<cms:if "<cms:not business_mobile />" && "<cms:not business_landline />">
+											- NA -
+										</cms:if>
+									</td>
+									<td>
+										<div class="btn-group btn-group-xs" role="group" aria-label="...">
+											<button type="button" class="btn btn-warning gxcpl-btn gxcpl-fc-21" onclick="window.location='<cms:route_link "edit_restaurant" rt_id=k_page_id />';">
+												<i class="fa fa-edit"></i><span class="hidden-sm hidden-xs"> EDIT</span>
+											</button>
+
+											<button type="button" class="btn btn-danger gxcpl-btn" onclick="window.location='<cms:route_link "delete_restaurant" rt_id=k_page_id />';" >
+												<i class="fa fa-trash"></i><span class="hidden-sm hidden-xs"> Delete</span>
+											</button>
+										</div>
+									</td>
+								</tr>
+								</cms:pages>
+							</tbody>
+						</table>
+						<!-- restaurant: List -->
+						<div class="gxcpl-ptop-20"></div>
+					</div>

@@ -1,6 +1,5 @@
 								<cms:set empid="<cms:gpc 'id' method='get' />" scope='global' />
 								<cms:pages masterpage=k_user_template id=id show_future_entries='1' limit='1' >
-								<cms:show k_page_id />-<cms:show id />-<cms:show empid />
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 									<h4 class="modal-title" id="myModalLabel"><cms:show user_fname /> <cms:show user_lname /></h4>
@@ -8,10 +7,29 @@
 								<div class="modal-body">
 									<div class="row">
 										<div class="col-md-3">
-											<div class="gxcpl-emp-modal-image-container">
-												<img class="gxcpl-emp-modal-image gxcpl-navbar-shadow" src="../assets/images/profile-image.jpg" />
+											<div class="row">
+												<div class="col-md-12">
+													<div class="gxcpl-emp-modal-image-container">
+														<img class="gxcpl-emp-modal-image gxcpl-navbar-shadow" src="../assets/images/profile-image.jpg" />
+													</div>
+												</div>
 											</div>
 											<div class="gxcpl-ptop-10"></div>
+											
+											<div class="row">
+												<div class="col-md-12">
+													<label class="gxcpl-label gxcpl-no-margin text-muted">
+														Work Location
+													</label>
+												</div>
+												<div class="col-md-12">
+													<cms:related_pages 'user_location'>
+														<cms:show k_page_title />
+													</cms:related_pages>
+												</div>
+											</div>
+											<div class="gxcpl-ptop-10"></div>
+											
 										</div>
 										<div class="col-md-3">
 											<label class="gxcpl-label">
@@ -85,7 +103,7 @@
 													<div class="gxcpl-ptop-10"></div>
 												</div>
 												<div class="col-md-12" style="position: relative;">
-													<cms:if user_photo eq '1'>
+													<cms:if user_aadhaar eq '1'>
 														<cms:show_securefile 'user_aadhaar'>
 														<a class="example-image-link gxcpl-anchor" href="<cms:securefile_link file_id />" data-lightbox="example-<cms:show k_user_id />">
 															<img class="example-image gxcpl-aadhaar-card gxcpl-navbar-shadow" src="<cms:securefile_link file_id />" alt="Aadhaar Card of <cms:show user_fname /> <cms:show user_lname />" />
@@ -106,7 +124,7 @@
 													<div class="gxcpl-ptop-10"></div>
 												</div>
 												<div class="col-md-12" style="position: relative;">
-													<cms:if user_photo eq '1'>
+													<cms:if user_fingerprint eq '1'>
 														<cms:show_securefile 'user_fingerprint'>
 														<a class="example-image-link gxcpl-anchor" href="<cms:securefile_link file_id />" data-lightbox="example-<cms:show k_user_id />">
 															<img class="example-image gxcpl-aadhaar-card gxcpl-navbar-shadow" src="<cms:securefile_link file_id />" alt="Aadhaar Card of <cms:show user_fname /> <cms:show user_lname />" />

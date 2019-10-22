@@ -1,11 +1,18 @@
 <?php require_once( '../couch/cms.php' ); ?>
 <cms:template title='Restaurant' clonable='1' routable='1' parent="_masterentry_">
-	<cms:route name='list_gender' path='' />
-	<cms:route name='create_gender' path='create' />
-    <cms:route name='edit_gender' path='{:id}/edit' >
+	<cms:editable name="business_logo" label="Business Logo" type="securefile" allowed_ext='jpg, jpeg, png, gif' max_size='20000' width='200' quality='90' order='1' thumb_width='100' show_preview='1' use_thumb_for_preview='1' />
+	<cms:editable name="business_mobile" label="Business Mobile" type="text" order="2" />
+	<cms:editable name="business_landline" label="Business Landline" type="text" order="3" />
+	<cms:editable name="business_emailid" label="Business Email Id" type="text" validator="email" order="4" />
+	<cms:editable name="business_address" label="Business Address" type="textarea" height='50' no_ss_check="1" required="1" order="5" />
+	<cms:editable name="business_website" label="Business Website" type="text" order="6" />
+
+	<cms:route name='list_restaurant' path='' />
+	<cms:route name='create_restaurant' path='create' />
+    <cms:route name='edit_restaurant' path='{:id}/edit' >
     	<cms:route_validators id='non_zero_integer' />
 	</cms:route>
-	<cms:route name='delete_gender' path='{:id}/delete' >
+	<cms:route name='delete_restaurant' path='{:id}/delete' >
 	    <cms:route_validators id='non_zero_integer' />
 	</cms:route>
 </cms:template>
@@ -19,192 +26,21 @@
 -->
 <cms:embed 'header.html' />
 		<!-- Content -->
+		<cms:match_route debug='0' />
 		<div class="gxcpl-content-div">
+			
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
 						<h4 class="gxcpl-no-margin gxcpl-no-padding">
-							Master Settings: Restaurant <span class="pull-right"><a href="#!" class="gxcpl-anchor" data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle"></i></a></span>
+							Master Entry: Restaurant
 						</h4>
 						<hr class="style7" />
 						<div class="gxcpl-ptop-10"></div>
 					</div>
+					
+					<cms:embed "settings/restaurant/<cms:show k_matched_route />.html" />
 
-					<!-- Restaurant: Add New -->
-					<div class="col-md-3">
-						<div class="gxcpl-card gxcpl-card-shadow gxcpl-card-white">
-							<div class="gxcpl-card-header">
-								<h4 class="gxcpl-no-margin">
-									Restaurant Details
-								</h4>
-							</div>
-							<div class="gxcpl-card-body">
-								<div class="gxcpl-ptop-20"></div>
-								<div class="row">
-									<div class="col-md-12">
-										<label class="gxcpl-label">
-											Restaurant Logo
-										</label>
-									</div>
-									<div class="col-md-12">
-										<input class="gxcpl-input-text gxcpl-transition" type="file" name="business_logo" />
-									</div>
-								</div>
-								<div class="gxcpl-ptop-10"></div>
-
-								<div class="row">
-									<div class="col-md-12">
-										<label class="gxcpl-label">
-											Restaurant Name
-										</label>
-									</div>
-									<div class="col-md-12">
-										<input class="gxcpl-input-text gxcpl-transition" type="text" name="business_name" />
-									</div>
-								</div>
-								<div class="gxcpl-ptop-10"></div>
-
-								<div class="row">
-									<div class="col-md-12">
-										<label class="gxcpl-label">
-											Restaurant Mobile
-										</label>
-									</div>
-									<div class="col-md-12">
-										<input class="gxcpl-input-text gxcpl-transition" type="text" name="business_mobile" />
-									</div>
-								</div>
-								<div class="gxcpl-ptop-10"></div>
-
-								<div class="row">
-									<div class="col-md-12">
-										<label class="gxcpl-label">
-											Restaurant Landline
-										</label>
-									</div>
-									<div class="col-md-12">
-										<input class="gxcpl-input-text gxcpl-transition" type="text" name="business_landline" />
-									</div>
-								</div>
-								<div class="gxcpl-ptop-10"></div>
-
-								<div class="row">
-									<div class="col-md-12">
-										<label class="gxcpl-label">
-											Restaurant Email Id
-										</label>
-									</div>
-									<div class="col-md-12">
-										<input class="gxcpl-input-text gxcpl-transition" type="text" name="business_emailid" />
-									</div>
-								</div>
-								<div class="gxcpl-ptop-10"></div>
-
-								<div class="row">
-									<div class="col-md-12">
-										<label class="gxcpl-label">
-											Restaurant Address
-										</label>
-									</div>
-									<div class="col-md-12">
-										<textarea class="gxcpl-input-text gxcpl-transition" name="business_address" ></textarea>
-									</div>
-								</div>
-								<div class="gxcpl-ptop-10"></div>
-
-								<div class="row">
-									<div class="col-md-12">
-										<label class="gxcpl-label">
-											Business Website URL
-										</label>
-									</div>
-									<div class="col-md-12">
-										<input class="gxcpl-input-text gxcpl-transition" type="text" name="business_website" />
-									</div>
-								</div>
-								<div class="gxcpl-ptop-10"></div>
-
-								<div class="gxcpl-ptop-20"></div>
-							</div>
-							<div class="gxcpl-card-footer text-center">
-								<button class="btn btn-default gxcpl-btn ripple">
-									<i class="fa fa-save"></i> SAVE
-								</button>
-							</div>
-						</div>
-					</div>
-					<!-- Restaurant: Add New -->
-
-					<!-- Restaurant: List -->
-					<div class="col-md-9">
-						<!-- Group: List -->
-						<table class="gxcpl-card-shadow gxcpl-card-white">
-							<thead class="gxcpl-table-header">
-								<tr>
-									<th width="65px">
-										Sr. No.
-									</th>
-									<th width="*">
-										Restaurant Name
-									</th>
-									<th width="*">
-										Contact Number
-									</th>
-									<th width="30%">
-										Action
-									</th>
-								</tr>
-							</thead>
-							<tbody class="gxcpl-table-body">
-								<tr>
-									<td class="text-center">
-										1.
-									</td>
-									<td>
-										<a class="example-image-link gxcpl-anchor" href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg" data-lightbox="example-1">
-											<img class="example-image gxcpl-list-thumbnail" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg" alt="image-1" />
-										</a> Awadh
-									</td>
-									<td>
-										+91-1234567890
-									</td>
-									<td>
-										<div class="btn-group btn-group-xs" role="group" aria-label="...">
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-default">
-												<i class="fa fa-trash"></i>
-											</button>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-							<tfoot class="gxcpl-table-footer">
-								<tr>
-									<td colspan="4" class="text-center">
-										<div class="btn-group btn-group-xs" role="group" aria-label="...">
-											<button type="button" class="btn btn-default">
-												<
-											</button>
-											<button type="button" class="btn btn-default">
-												1
-											</button>
-											<button type="button" class="btn btn-default">
-												2
-											</button>
-											<button type="button" class="btn btn-default">
-												>
-											</button>
-										</div>
-									</td>
-								</tr>
-							</tfoot>
-						</table>
-						<!-- Group: List -->
-						<div class="gxcpl-ptop-20"></div>
-					</div>
-					<!-- Restaurant: List -->
 				</div>
 			</div>	
 		</div>

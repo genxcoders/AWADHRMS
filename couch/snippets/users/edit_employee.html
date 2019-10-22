@@ -9,9 +9,7 @@
 				        id='edit_user_form'
 			        >
 
-	                <cms:if k_success >        
-
-	                    <cms:check_spam email=frm_extended_user_email />            
+	                <cms:if k_success >     
 
 	                    <cms:db_persist_form 
 	                        _invalidate_cache='0'
@@ -20,7 +18,7 @@
 	                    />                    
 
 	                    <cms:if k_success >
-	                        <cms:send_mail from="<cms:php>echo K_EMAIL_FROM;</cms:php>" to=frm_extended_user_email subject='New Account Confirmation' debug='1'>
+	                        <cms:send_mail from="<cms:php>echo K_EMAIL_FROM;</cms:php>" to=frm_extended_user_email subject='New Account Confirmation'>
 	                            Welcome!
 	                            <br>
 								Your username is: "<cms:show frm_extended_user_email /> or <cms:show frm_user_mobile />"<br>
@@ -28,11 +26,12 @@
 
 								If you have questions or if you need further information please do not hesitate to contact us at any time!<br>
 
-								Your Team
-								<cms:show k_site_link />
+								Yours', 
+								<br>
+								Team <cms:show k_site_link />
 	                        </cms:send_mail>                   
 	                        <cms:if k_success >                 
-	                        	<cms:set_cookie 'submit_success_edit_emp' value='Record edited successfully.' expire='86400' />
+	                        	<cms:set_cookie 'submit_success_edit_emp' value='Record updated successfully.' expire='86400' />
 	                        	<cms:redirect k_page_link />
 	                        </cms:if>
 	                    </cms:if> 
@@ -203,6 +202,16 @@
 								</div>
 								<div class="gxcpl-ptop-10"></div>
 
+								<div class="row">
+									<div class="col-md-12 col-sm-12 col-xs-12">
+										<label class="gxcpl-label">
+											Work Location
+										</label>
+										<cms:input class="gxcpl-input-text gxcpl-transition" type="bound" name="user_location" />
+									</div>
+								</div>
+								<div class="gxcpl-ptop-10"></div>
+
 							</div>
 
 							<div class="gxcpl-card-body">
@@ -316,9 +325,11 @@
 														<button type="button" class="btn btn-default btn-xs gxcpl-btn" onclick="window.location='<cms:route_link 'edit_employee' rt_id=k_page_id />';" data-toggle="tooltip" data-placement="top" title="Edit">
 															<i class="fa fa-edit"></i>
 														</button>
+														<cms:ignore>
 														<button type="button" class="btn btn-default btn-xs gxcpl-btn" onclick="window.location='<cms:route_link 'delete_employee' rt_id=k_page_id />';" data-toggle="tooltip" data-placement="top" title="Delete">
 															<i class="fa fa-trash"></i>
 														</button>
+														</cms:ignore>
 														</cms:if>
 													</div>
 												</div>
