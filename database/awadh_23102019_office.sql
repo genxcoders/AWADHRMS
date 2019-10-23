@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 22, 2019 at 05:09 PM
+-- Generation Time: Oct 23, 2019 at 03:55 PM
 -- Server version: 5.7.24
 -- PHP Version: 5.6.40
 
@@ -595,7 +595,7 @@ CREATE TABLE IF NOT EXISTS `couch_pages` (
   KEY `couch_pages_index40` (`template_id`,`parent_id`,`page_folder_id`,`file_ext`,`file_name`(255)),
   KEY `couch_pages_index41` (`template_id`,`parent_id`,`page_folder_id`,`file_size`),
   KEY `couch_pages_index42` (`template_id`,`parent_id`,`page_folder_id`,`k_order`)
-) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `couch_pages`
