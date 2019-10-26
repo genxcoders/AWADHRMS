@@ -14,7 +14,8 @@ html {
 body {
 	margin: 0px;
 	padding: 0px;
-	background-color: #f1f4f6;
+	/*background-color: #f1f4f6;*/
+	background-color: #e2e1e0;
 	line-height: 1.5;
 	font-size: 13px;
 	margin-bottom: 50px;
@@ -111,8 +112,8 @@ a.gxcpl-fc-white, .gxcpl-fc-white {
 }
 hr.style7 {
 	margin: 5px 0px 10px;
-	border-top: 1px solid #2121;
-	border-bottom: 1px solid #fff;
+	border-top: 1px solid rgba(0,0,0,0.15);
+	/*border-bottom: 1px solid #fff;*/
 }
 /* Spacing */
 

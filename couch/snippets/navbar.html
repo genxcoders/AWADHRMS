@@ -60,8 +60,28 @@
 		                        </li>
 		                    </ul>
 		                </li>
-		                <li>
-		                	<a href="<cms:show k_logout_link />"><i class="fa fa-sign-out"></i> Logout</a>		                	
+		                <li class="dropdown">
+		                	<a class="dropdown-toggle" data-toggle="dropdown">
+		                		<cms:if k_logged_in>
+									<cms:pages masterpage=k_user_template limit='1' id=k_user_id>
+										<i class="fa fa-user text-center gxcpl-emp-no-photo"></i>
+										<cms:if user_fname && user_lname>
+											<cms:show user_fname /> <b class="caret"></b>
+										<cms:else />
+											<cms:show k_page_title /> <b class="caret"></b>
+										</cms:if>
+		                			</cms:pages>
+		                		</cms:if>
+		                	</a>
+		                    <ul class="dropdown-menu" role="menu">
+		                    	<li>
+		                        	<a href="<cms:link 'users/profile.php' />">Profile</a>
+		                        </li>
+		                        <li role="separator" class="divider"></li>
+		                        <li>
+		                        	<a href="<cms:logout_link redirect=k_site_link />"><i class="fa fa-sign-out"></i> Logout</a>
+		                        </li>
+		                    </ul>
 		                </li>
 		            </ul>
 		        </div>
