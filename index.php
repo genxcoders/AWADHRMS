@@ -14,6 +14,7 @@
 		<!-- Content -->
 		<div class="gxcpl-content-div">
 			<div class="container-fluid">
+				<!-- Remove at delivery -->
 				<div class="row">
 					<div class="col-md-12">
 						<cms:if usertype eq 'Captain' >
@@ -23,6 +24,122 @@
 						</cms:if>
 					</div>
 				</div>
+				<!-- Remove at delivery -->
+
+				<!-- Total Sales Today -->
+				<div class="col-md-2 col-sm-6 col-xs-6">
+					<div class="gxcpl-card gxcpl-card-white gxcpl-card-shadow">
+						<div class="gxcpl-card-header">
+							<h5 class="gxcpl-no-margin">Sales</h5>
+						</div>
+						<div class="gxcpl-card-body">
+							<h3 class="gxcpl-no-margin text-center">
+								<i class="fa fa-inr"></i> 0.00
+							</h3>
+						</div>
+						<div class="gxcpl-card-footer-small text-center">
+							Invoices #0
+						</div>
+					</div>
+					<div class="gxcpl-ptop-10"></div>
+				</div>
+				<!-- Total Sales Today -->
+
+				<!-- Total Discount Today -->
+				<div class="col-md-2 col-sm-6 col-xs-6">
+					<div class="gxcpl-card gxcpl-card-white gxcpl-card-shadow">
+						<div class="gxcpl-card-header">
+							<h5 class="gxcpl-no-margin">Discounts</h5>
+						</div>
+						<div class="gxcpl-card-body">
+							<h3 class="gxcpl-no-margin text-center">
+								<i class="fa fa-inr"></i> 0.00
+							</h3>
+						</div>
+						<div class="gxcpl-card-footer-small text-center">
+							Invoices #0
+						</div>
+					</div>
+					<div class="gxcpl-ptop-10"></div>
+				</div>
+				<!-- Total Discount Today -->
+
+				<!-- Total Payment Pending Today -->
+				<div class="col-md-2 col-sm-6 col-xs-6">
+					<div class="gxcpl-card gxcpl-card-white gxcpl-card-shadow">
+						<div class="gxcpl-card-header">
+							<h5 class="gxcpl-no-margin">Due</h5>
+						</div>
+						<div class="gxcpl-card-body">
+							<h3 class="gxcpl-no-margin text-center">
+								<i class="fa fa-inr"></i> 0.00
+							</h3>
+						</div>
+						<div class="gxcpl-card-footer-small text-center">
+							Invoices #0
+						</div>
+					</div>
+					<div class="gxcpl-ptop-10"></div>
+				</div>
+				<!-- Total Payment Pending Today -->
+
+				<!-- Total Pending Orders -->
+				<div class="col-md-2 col-sm-6 col-xs-6">
+					<div class="gxcpl-card gxcpl-card-white gxcpl-card-shadow">
+						<div class="gxcpl-card-header">
+							<h5 class="gxcpl-no-margin">Orders</h5>
+						</div>
+						<div class="gxcpl-card-body">
+							<h3 class="gxcpl-no-margin text-center">
+								<i class="fa fa-inr"></i> 0.00
+							</h3>
+						</div>
+						<div class="gxcpl-card-footer-small text-center">
+							Cancelled #0
+						</div>
+					</div>
+					<div class="gxcpl-ptop-10"></div>
+				</div>
+				<!-- Total Pending Orders -->
+
+				<!-- Total Customers Today -->
+				<div class="col-md-2 col-sm-6 col-xs-6">
+					<div class="gxcpl-card gxcpl-card-white gxcpl-card-shadow">
+						<div class="gxcpl-card-header">
+							<h5 class="gxcpl-no-margin">Customers</h5>
+						</div>
+						<div class="gxcpl-card-body">
+							<h3 class="gxcpl-no-margin text-center">
+								<i class="fa fa-inr"></i> 0.00
+							</h3>
+						</div>
+						<div class="gxcpl-card-footer-small text-center">
+							Repeat #0
+						</div>
+					</div>
+					<div class="gxcpl-ptop-10"></div>
+				</div>
+				<!-- Total Customers Today -->
+
+				<!-- Total Expenses Today -->
+				<div class="col-md-2 col-sm-6 col-xs-6">
+					<div class="gxcpl-card gxcpl-card-white gxcpl-card-shadow">
+						<div class="gxcpl-card-header">
+							<h5 class="gxcpl-no-margin">Expenses</h5>
+						</div>
+						<div class="gxcpl-card-body">
+							<h3 class="gxcpl-no-margin text-center">
+								<i class="fa fa-inr"></i> 0.00
+							</h3>
+						</div>
+						<div class="gxcpl-card-footer-small text-center">
+							Expense <i class="fa fa-inr"></i> 0
+						</div>
+					</div>
+					<div class="gxcpl-ptop-10"></div>
+				</div>
+				<!-- Total Expenses Today -->
+
 			</div>	
 		</div>
 		<!-- Content -->
