@@ -22,7 +22,7 @@
 						        </cms:if>
 					        </cms:if>
 
-							<div class="gxcpl-card gxcpl-card-white gxcpl-card-shadow">
+							<div class="gxcpl-card gxcpl-card-white gxcpl-shadow-1">
 								<div class="gxcpl-card-header">
 									<h5 class="gxcpl-no-margin">
 										Edit Certification
@@ -81,7 +81,7 @@
 
 						<div class="col-md-9">
 							<!-- Certification: List -->
-						<table class="gxcpl-card-shadow gxcpl-card-white display" id="rmsdatatable">
+						<table class="gxcpl-shadow-1 gxcpl-card-white display" id="rmsdatatable">
 							<thead class="gxcpl-table-header">
 								<tr>
 									<th width="65px">
@@ -115,7 +115,7 @@
 										<cms:show_securefile 'certificate_image' >
     									<cms:if file_is_image >
 										<a class="example-image-link gxcpl-anchor" href="<cms:securefile_link file_id />" data-lightbox="<cms:show k_page_id />">
-											<img class="example-image gxcpl-list-thumbnail gxcpl-loading" style="object-fit: cover;" src="<cms:securefile_link file_id />" alt="<cms:show k_page_title />" />
+											<img class="example-image gxcpl-list-thumbnail gxcpl-loading" src="<cms:securefile_link file_id />" alt="<cms:show k_page_title />" />
 										</a>
 										</cms:if>
 										</cms:show_securefile> <cms:show k_page_title />

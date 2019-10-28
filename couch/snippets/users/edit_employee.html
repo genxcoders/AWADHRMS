@@ -48,7 +48,7 @@
 							</cms:each>
 						</div>
 					</cms:if>
-						<div class="gxcpl-card gxcpl-card-shadow gxcpl-card-white">
+						<div class="gxcpl-card gxcpl-shadow-1 gxcpl-card-white">
 							<div class="gxcpl-card-header">
 								<h4 class="gxcpl-no-margin">
 									Edit Employee
@@ -280,7 +280,7 @@
 						
 						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 							<cms:pages masterpage='designation/designation.php'>
-							<div class="panel panel-default gxcpl-card-shadow">
+							<div class="panel panel-default gxcpl-shadow-1">
 								<div class="panel-heading" role="tab" id="heading-<cms:show k_page_id />" data-toggle="collapse" data-parent="#accordion" data-target="#collapse-<cms:show k_page_id />">
 									<strong>
 										<a class="gxcpl-anchor" role="button" >
@@ -294,7 +294,7 @@
 
 											<cms:pages masterpage=k_user_template custom_field="user_designation=<cms:show k_page_name />">
 											<div class="col-md-2 col-sm-6 col-xs-6">
-												<div class="gxcpl-emp-card gxcpl-card-shadow">
+												<div class="gxcpl-emp-card gxcpl-shadow-1">
 													<div class="gxcpl-emp-card-header">
 														<cms:if user_photo eq '1'>
 															<cms:show_securefile 'user_photo'>
@@ -316,8 +316,8 @@
 													</div>
 													<div class="gxcpl-emp-card-footer text-center">
 														<div class="gxcpl-ptop-5"></div>
-														<span data-toggle="modal" data-target=".emp-details">
-															<button type="button" class="btn btn-default btn-xs gxcpl-btn" data-toggle="tooltip" data-placement="top" title="View">
+														<span data-toggle="modal" data-target=".emp-details" data-backdrop="static" data-keyboard="false">
+															<button id="view-emp" type="button" class="btn btn-default btn-xs gxcpl-btn" data-toggle="tooltip" data-placement="top" data-id="<cms:show k_page_id />" title="View" >
 																<i class="fa fa-eye"></i>
 															</button>
 														</span>
@@ -325,11 +325,6 @@
 														<button type="button" class="btn btn-default btn-xs gxcpl-btn" onclick="window.location='<cms:route_link 'edit_employee' rt_id=k_page_id />';" data-toggle="tooltip" data-placement="top" title="Edit">
 															<i class="fa fa-edit"></i>
 														</button>
-														<cms:ignore>
-														<button type="button" class="btn btn-default btn-xs gxcpl-btn" onclick="window.location='<cms:route_link 'delete_employee' rt_id=k_page_id />';" data-toggle="tooltip" data-placement="top" title="Delete">
-															<i class="fa fa-trash"></i>
-														</button>
-														</cms:ignore>
 														</cms:if>
 													</div>
 												</div>
@@ -345,3 +340,7 @@
 						</div>
 						
 					</div>
+
+					<!-- Employee Detail Modals -->
+					<div class="modal fade emp-details" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="z-index: 9999;"></div>
+					<!-- Employee Detail Modals -->

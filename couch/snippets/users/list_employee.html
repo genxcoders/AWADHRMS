@@ -9,7 +9,7 @@
 						
 						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 							<cms:pages masterpage='designation/designation.php'>
-							<div class="panel panel-default gxcpl-card-shadow">
+							<div class="panel panel-default gxcpl-shadow-1">
 								<div class="panel-heading" role="tab" id="heading-<cms:show k_page_id />" data-toggle="collapse" data-parent="#accordion" data-target="#collapse-<cms:show k_page_id />">
 									<strong>
 										<a class="gxcpl-anchor" role="button" >
@@ -23,7 +23,7 @@
 
 											<cms:pages masterpage=k_user_template custom_field="user_designation=<cms:show k_page_name />">
 											<div class="col-md-2 col-sm-6 col-xs-6">
-												<div class="gxcpl-emp-card gxcpl-card-shadow">
+												<div class="gxcpl-emp-card gxcpl-shadow-1">
 													<div class="gxcpl-emp-card-header">
 														<cms:if user_photo eq '1'>
 															<cms:show_securefile 'user_photo'>

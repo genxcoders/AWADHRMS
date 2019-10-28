@@ -18,7 +18,15 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="gxcpl-emp-modal-image-container">
-									<img class="gxcpl-emp-modal-image gxcpl-navbar-shadow" src="../assets/images/profile-image.jpg" />
+									<cms:if user_photo eq '1'>
+										<cms:show_securefile 'user_photo'>
+										<a class="example-image-link gxcpl-anchor" href="<cms:securefile_link file_id />" data-lightbox="example-<cms:show k_user_id />">
+											<img class="example-image gxcpl-emp-modal-image gxcpl-navbar-shadow" src="<cms:securefile_link file_id />" alt="Photo of <cms:show user_fname /> <cms:show user_lname />" />
+										</a>
+										</cms:show_securefile>
+									<cms:else />
+										<img class="gxcpl-emp-modal-image gxcpl-navbar-shadow" src="<cms:show k_site_link />assets/images/profile-image.jpg" />
+									</cms:if>
 								</div>
 							</div>
 						</div>
@@ -111,7 +119,7 @@
 								<div class="gxcpl-ptop-10"></div>
 							</div>
 							<div class="col-md-12" style="position: relative;">
-								<cms:if user_photo eq '1'>
+								<cms:if user_aadhaar eq '1'>
 									<cms:show_securefile 'user_aadhaar'>
 									<a class="example-image-link gxcpl-anchor" href="<cms:securefile_link file_id />" data-lightbox="example-<cms:show k_user_id />">
 										<img class="example-image gxcpl-aadhaar-card gxcpl-navbar-shadow" src="<cms:securefile_link file_id />" alt="Aadhaar Card of <cms:show user_fname /> <cms:show user_lname />" />
@@ -132,7 +140,7 @@
 								<div class="gxcpl-ptop-10"></div>
 							</div>
 							<div class="col-md-12" style="position: relative;">
-								<cms:if user_photo eq '1'>
+								<cms:if user_fingerprint eq '1'>
 									<cms:show_securefile 'user_fingerprint'>
 									<a class="example-image-link gxcpl-anchor" href="<cms:securefile_link file_id />" data-lightbox="example-<cms:show k_user_id />">
 										<img class="example-image gxcpl-aadhaar-card gxcpl-navbar-shadow" src="<cms:securefile_link file_id />" alt="Aadhaar Card of <cms:show user_fname /> <cms:show user_lname />" />
